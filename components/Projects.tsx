@@ -31,7 +31,7 @@ const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'AI Generated Images'],
     image: '/family-cookbook/Cookbook1.jpg',
     link: 'http://goldmanfamilycookbook.com/',
-    github: 'http://goldmanfamilycookbook.com/',
+    github: '',
     demo: 'http://goldmanfamilycookbook.com/'
   },
   {
@@ -40,9 +40,9 @@ const projects: Project[] = [
     description: 'Interactive storybook site with GPT-4 and DALL·E-generated content. Creates personalized, AI-generated fairy tales for children with unique illustrations.',
     technologies: ['React', 'GPT-4', 'DALL·E', 'AI Generated Content'],
     image: '/fairytales4kids/Fairytales1.jpg',
-    link: 'http://fairytales4kids.com/',
-    github: 'http://fairytales4kids.com/',
-    demo: 'http://fairytales4kids.com/'
+    link: 'https://fairytales4kids.com/',
+    github: 'https://github.com/annabel-goldman/fairytales4kids',
+    demo: 'https://fairytales4kids.com/'
   },
   {
     id: 5,
@@ -189,12 +189,12 @@ export default function Projects() {
                         href={selectedProject.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-cream-50 text-navy-800 px-6 py-3 font-serif font-medium hover:bg-cream-100 transition-colors duration-200 text-center"
+                        className="border border-cream-50 text-cream-50 px-6 py-3 font-serif font-medium hover:bg-cream-50 hover:text-navy-800 transition-colors duration-200 text-center"
                       >
                         View Live Site
                       </a>
                     )}
-                    {selectedProject.title !== 'Crosswordr' && (
+                    {selectedProject.github && selectedProject.title !== 'Crosswordr' && (
                       <a
                         href={selectedProject.github}
                         target="_blank"

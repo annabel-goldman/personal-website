@@ -73,8 +73,8 @@ export default function Hero() {
             <span className="text-navy-800">Annabel Marie Goldman</span>
           )}
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-6 sm:mb-8 font-medium w-full">
-          Full-Stack Software Engineer | Masters Student in Computer Science, Northwestern University
+        <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-2 sm:mb-3 font-medium w-full">
+          Masters Student in Computer Science, Northwestern University
         </p>
         <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl w-full leading-relaxed">
           My research interests span computer science education, human-computer interaction, 
