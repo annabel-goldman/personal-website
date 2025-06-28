@@ -7,9 +7,13 @@ import Footer from '@/components/Footer'
 export default function Resume() {
   const [isHovered, setIsHovered] = useState(false)
 
+  // Determine if we're in production (GitHub Pages) or development
+  const isProduction = process.env.NODE_ENV === 'production'
+  const basePath = isProduction ? '/website' : ''
+
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/resume/Annabel_Goldman_Resume (1).pdf'
+    link.href = `${basePath}/resume/Annabel_Goldman_Resume (1).pdf`
     link.download = 'Annabel_Goldman_Resume.pdf'
     document.body.appendChild(link)
     link.click()
@@ -28,7 +32,7 @@ export default function Resume() {
             onMouseLeave={() => setIsHovered(false)}
           >
             <img
-              src="/resume/Screenshot 2025-06-27 at 5.56.57 PM.png"
+              src={`${basePath}/resume/Screenshot 2025-06-27 at 5.56.57 PM.png`}
               alt="Annabel Goldman Resume"
               className="w-full h-full object-contain"
               style={{ maxHeight: 'calc(100vh - 4rem)' }}

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 const images = [
   '/home-carosel/1.jpg',
@@ -10,6 +11,16 @@ const images = [
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const pathname = usePathname()
+  
+  // Determine if we're in production (GitHub Pages) or development
+  const isProduction = process.env.NODE_ENV === 'production'
+  const basePath = isProduction ? '/website' : ''
+  
+  // Add basePath to image URLs for production
+  const getImageUrl = (imagePath: string) => {
+    return `${basePath}${imagePath}`
+  }
 
   // Auto-advance carousel every 5 seconds
   useEffect(() => {
@@ -39,17 +50,17 @@ export default function Carousel() {
         {images.map((image, index) => (
           <img
             key={index}
-            src={image}
+            src={getImageUrl(image)}
             alt={`Annabel Marie Goldman ${index + 1}`}
             className={`absolute w-full h-full object-cover object-center transition-opacity duration-1000 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
             onError={(e) => {
-              console.error(`Failed to load image: ${image}`)
+              console.error(`Failed to load image: ${getImageUrl(image)}`)
               e.currentTarget.style.display = 'none'
             }}
             onLoad={() => {
-              console.log(`Successfully loaded image: ${image}`)
+              console.log(`Successfully loaded image: ${getImageUrl(image)}`)
             }}
           />
         ))}
