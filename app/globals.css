@@ -133,4 +133,12 @@ html:hover::-webkit-scrollbar {
 .btn-hover:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(55, 48, 163, 0.3);
+}
+
+body, html {
+  cursor: url('/image-small.png') 10 10, auto !important;
+}
+
+a, button, [role="button"], .btn-hover, input[type="button"], input[type="submit"], label[for], .cursor-pointer {
+  cursor: url('/image-small-pink.png') 10 10, pointer !important;
 } 

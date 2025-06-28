@@ -1,9 +1,10 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import './globals.css'
+import StarTrail from '../components/StarTrail'
 
 export const metadata: Metadata = {
-  title: 'Annie\'s Portfolio',
+  title: 'Annabel Goldman',
   description: 'Software Engineer & Developer Portfolio',
 }
 
@@ -14,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="icon" href="/image.png" type="image/png" />
+      </head>
+      <body>
+        <StarTrail />
+        {children}
+      </body>
     </html>
   )
 } 

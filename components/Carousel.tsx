@@ -35,7 +35,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-gray-200">
+    <div className="relative w-full h-full overflow-hidden bg-gray-200 group">
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -60,7 +60,7 @@ export default function Carousel() {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10 opacity-0 group-hover:opacity-100"
         aria-label="Previous image"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ export default function Carousel() {
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10 opacity-0 group-hover:opacity-100"
         aria-label="Next image"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function Carousel() {
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         {images.map((_, index) => (
           <button
             key={index}
@@ -92,11 +92,6 @@ export default function Carousel() {
             aria-label={`Go to image ${index + 1}`}
           />
         ))}
-      </div>
-
-      {/* Debug info */}
-      <div className="absolute top-4 left-4 bg-black/70 text-white p-2 rounded text-sm z-20">
-        Current: {currentIndex + 1} / {images.length}
       </div>
     </div>
   )
