@@ -1,15 +1,77 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Carousel from './Carousel'
 
+// TypewriterText component for typing animation
+const TypewriterText = ({ text, className, delay = 0, speed = 50 }: { 
+  text: string; 
+  className: string; 
+  delay?: number; 
+  speed?: number; 
+}) => {
+  const [displayText, setDisplayText] = useState('')
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTypingComplete, setIsTypingComplete] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentIndex < text.length) {
+        setDisplayText(prev => prev + text[currentIndex])
+        setCurrentIndex(prev => prev + 1)
+      } else {
+        setIsTypingComplete(true)
+      }
+    }, speed)
+
+    return () => clearTimeout(timer)
+  }, [currentIndex, text, speed])
+
+  useEffect(() => {
+    const initialTimer = setTimeout(() => {
+      setCurrentIndex(0)
+      setDisplayText('')
+      setIsTypingComplete(false)
+    }, delay)
+
+    return () => clearTimeout(initialTimer)
+  }, [delay])
+
+  return (
+    <span className={className}>
+      {displayText}
+      {!isTypingComplete && <span className="animate-pulse">|</span>}
+    </span>
+  )
+}
+
 export default function Hero() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    // Small delay to ensure smooth animation start
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <section className="h-screen pt-16 flex flex-row items-stretch justify-start bg-cream-50 relative overflow-hidden">
       {/* Left: Text Content */}
-      <div className="flex flex-col justify-center max-w-4xl w-full h-full px-6 sm:px-8 md:pl-16 md:pr-16 relative z-10 carousel-text" style={{ flex: '0 0 60%' }}>
+      <div className="flex flex-col justify-center max-w-4xl w-full h-full px-6 sm:px-8 md:pl-16 md:pr-16 relative z-10 carousel-text text-center md:text-left" style={{ flex: '0 0 60%' }}>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight w-full">
-          <span className="text-navy-800"> Annabel Marie Goldman</span>
+          {isLoaded ? (
+            <TypewriterText 
+              text="Annabel Marie Goldman" 
+              className="text-navy-800"
+              delay={0}
+              speed={80}
+            />
+          ) : (
+            <span className="text-navy-800">Annabel Marie Goldman</span>
+          )}
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-6 sm:mb-8 font-medium w-full">
           Full-Stack Software Engineer | Masters Student in Computer Science, Northwestern University
@@ -19,7 +81,7 @@ export default function Hero() {
           artificial intelligence, and web development. I'm passionate about creating 
           innovative solutions that bridge technology and human experience.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start items-start w-full text-navy-800">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start w-full text-navy-800">
           <a href="tel:+14155192314" className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
             <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
