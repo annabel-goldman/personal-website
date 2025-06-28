@@ -9,10 +9,10 @@ export default function Hero() {
       {/* Left: Text Content */}
       <div className="flex flex-col justify-center max-w-4xl w-full h-full px-6 sm:px-8 md:pl-16 md:pr-16 relative z-10 carousel-text" style={{ flex: '0 0 60%' }}>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight w-full">
-          Hi, I'm <span className="text-navy-800">Annabel Marie Goldman</span>
+          <span className="text-navy-800"> Annabel Marie Goldman</span>
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-6 sm:mb-8 font-medium w-full">
-          Full-Stack Software Engineer | M.S. Computer Science, Northwestern University
+          Full-Stack Software Engineer | Masters Student in Computer Science, Northwestern University
         </p>
         <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl w-full leading-relaxed">
           I build modern web applications with a focus on user experience, 
