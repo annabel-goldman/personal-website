@@ -78,8 +78,7 @@ export default function Hero() {
         </p>
         <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl w-full leading-relaxed">
           My research interests span computer science education, human-computer interaction, 
-          artificial intelligence, and web development. I'm passionate about creating 
-          innovative solutions that bridge technology and human experience.
+          artificial intelligence, and web development.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start w-full text-navy-800">
           <a href="tel:+14155192314" className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">

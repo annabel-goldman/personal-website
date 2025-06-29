@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 
-const STAR_IMAGE = '/image-small.png';
+const STAR_IMAGE = '/image.png';
 
 const StarTrail: React.FC = () => {
   const trailRef = useRef<HTMLDivElement>(null);
@@ -11,10 +11,10 @@ const StarTrail: React.FC = () => {
       const star = document.createElement('img');
       star.src = STAR_IMAGE;
       star.style.position = 'fixed';
-      star.style.left = `${e.clientX - 10}px`;
-      star.style.top = `${e.clientY - 10}px`;
-      star.style.width = '20px';
-      star.style.height = '20px';
+      star.style.left = `${e.clientX - 15}px`;
+      star.style.top = `${e.clientY - 15}px`;
+      star.style.width = '30px';
+      star.style.height = '30px';
       star.style.pointerEvents = 'none';
       star.style.transition = 'opacity 0.7s, transform 0.7s';
       star.style.opacity = '1';
