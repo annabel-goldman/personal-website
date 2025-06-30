@@ -53,6 +53,16 @@ const projects: Project[] = [
     link: 'https://annabel-goldman.github.io/CsComm/',
     github: 'https://github.com/annabel-goldman/CsComm',
     demo: 'https://annabel-goldman.github.io/CsComm/'
+  },
+  {
+    id: 6,
+    title: 'Visual Art Gallery',
+    description: 'A beautiful, responsive art gallery showcasing Annie\'s visual artwork including paintings, watercolors, drawings, and mixed media pieces. Features random image arrangement for a dynamic experience with a clean, modern dark theme.',
+    technologies: ['React 19.1.0', 'CSS3', 'Google Fonts', 'Responsive Design'],
+    image: '/visual-art/visual-art-gallery.png',
+    link: 'https://annabel-goldman.github.io/visual-art/',
+    github: 'https://github.com/annabel-goldman/visual-art',
+    demo: ''
   }
 ]
 
