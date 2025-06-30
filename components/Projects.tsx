@@ -17,7 +17,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Smart Closet',
-    description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. This project leverages advanced AI models to help users organize and style their wardrobe intelligently.',
+    description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
     technologies: ['React', 'OpenAI', 'Gemini', 'AWS', 'AI/ML'],
     image: '/smart-closet/SmartCloset1.jpg',
     link: 'https://github.com/annabel-goldman/smart-closet-submission',
@@ -27,8 +27,8 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Family Cookbook',
-    description: 'Static HTML recipe archive enhanced with AI-generated images. A personal family project that preserves culinary traditions with modern technology.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'AI Generated Images'],
+    description: 'A static HTML archive for family recipes, built to improve my AWS skills. I hosted the site on S3 and managed the domain with Route 53. If I redid it, I’d use a modern tech stack for more flexibility.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'AWS'],
     image: '/family-cookbook/Cookbook1.jpg',
     link: 'http://goldmanfamilycookbook.com/',
     github: '',
@@ -51,18 +51,18 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'Blog', 'Algorithms'],
     image: '/start-small/start-small.jpeg',
     link: 'https://annabel-goldman.github.io/CsComm/',
-    github: 'https://github.com/annabel-goldman/CsComm',
-    demo: 'https://annabel-goldman.github.io/CsComm/'
+    github: 'https://github.com/annabel-goldman/cs-algorithms',
+    demo: 'https://annabel-goldman.github.io/cs-algorithms/'
   },
   {
     id: 6,
     title: 'Visual Art Gallery',
-    description: 'A beautiful, responsive art gallery showcasing Annie\'s visual artwork including paintings, watercolors, drawings, and mixed media pieces. Features random image arrangement for a dynamic experience with a clean, modern dark theme.',
+    description: 'My digital art gallery to keep track of my artwork.',
     technologies: ['React 19.1.0', 'CSS3', 'Google Fonts', 'Responsive Design'],
     image: '/visual-art/visual-art-gallery.png',
     link: 'https://annabel-goldman.github.io/visual-art/',
     github: 'https://github.com/annabel-goldman/visual-art',
-    demo: ''
+    demo: 'https://annabel-goldman.github.io/visual-art/'
   }
 ]
 
