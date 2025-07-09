@@ -37,7 +37,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'Fairytales 4 Kids',
-    description: 'Interactive storybook site with GPT-4 and DALL·E-generated content. Creates personalized, AI-generated fairy tales for children with unique illustrations.',
+    description: 'Simple html site with CHATGPT 4 generated stories and and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
     technologies: ['React', 'GPT-4', 'DALL·E', 'AI Generated Content'],
     image: '/fairytales4kids/Fairytales1.jpg',
     link: 'https://fairytales4kids.com/',
@@ -50,7 +50,7 @@ const projects: Project[] = [
     description: 'A blog for students learning CS algorithms, with approachable explanations and problem breakdowns. Designed to make complex algorithms accessible to beginners.',
     technologies: ['Next.js', 'React', 'Blog', 'Algorithms'],
     image: '/start-small/start-small.jpeg',
-    link: 'https://annabel-goldman.github.io/CsComm/',
+    link: 'https://annabel-goldman.github.io/cs-algorithms/',
     github: 'https://github.com/annabel-goldman/cs-algorithms',
     demo: 'https://annabel-goldman.github.io/cs-algorithms/'
   },

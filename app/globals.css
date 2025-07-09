@@ -136,9 +136,9 @@ html:hover::-webkit-scrollbar {
 }
 
 body, html {
-  cursor: url('/cursor.png') 12 12, auto !important;
+  cursor: none !important;
 }
 
 a, button, [role="button"], .btn-hover, input[type="button"], input[type="submit"], label[for], .cursor-pointer {
-  cursor: url('/cursor-pink.png') 12 12, pointer !important;
+  cursor: none !important;
 } 
