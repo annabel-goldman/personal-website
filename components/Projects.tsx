@@ -92,7 +92,7 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className={`group relative flex flex-col justify-center items-start p-12 min-h-[18rem] border-r border-cream-50 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden${isLastRow ? '' : ' border-b'}`}
+                className={`group relative flex flex-col justify-center items-start p-12 min-h-[18rem] border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden${isLastRow ? '' : ' border-b'}`}
                 style={{ borderRadius: 0 }}
                 onClick={() => openModal(project)}
               >
@@ -111,7 +111,7 @@ export default function Projects() {
                 {/* Content container with relative positioning */}
                 <div className="relative z-10 w-full">
                   {/* Project Title */}
-                  <h3 className="text-2xl font-bold font-serif text-cream-50 mb-2 text-left transition-all duration-300 group-hover:text-cream-100 group-hover:scale-105 origin-left">
+                  <h3 className="text-2xl font-bold font-serif text-cream-50 mb-2 text-left transition-all duration-300 group-hover:text-cream-100 origin-left">
                     {project.title}
                   </h3>
                   {/* Technologies */}
