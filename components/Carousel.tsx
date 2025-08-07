@@ -2,12 +2,15 @@
 
 import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { ASSETS, ANIMATION } from '@/constants'
+import { handleImageError, handleImageLoad } from '@/utils'
 
-const images = [
-  '/home-carosel/1.jpg',
-  '/home-carosel/2.jpeg',
-  '/home-carosel/3.jpg',
-]
+/**
+ * Carousel Component
+ * Auto-advancing image carousel with navigation controls
+ */
+
+const images = ASSETS.CAROUSEL_IMAGES
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -17,7 +20,7 @@ export default function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
+    }, ANIMATION.CAROUSEL_INTERVAL)
 
     return () => clearInterval(interval)
   }, [])
@@ -46,13 +49,8 @@ export default function Carousel() {
             className={`absolute w-full h-full object-cover object-center transition-opacity duration-1000 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
-            onError={(e) => {
-              console.error(`Failed to load image: ${image}`)
-              e.currentTarget.style.display = 'none'
-            }}
-            onLoad={() => {
-              console.log(`Successfully loaded image: ${image}`)
-            }}
+            onError={(e) => handleImageError(image, e.currentTarget)}
+            onLoad={() => handleImageLoad(image)}
           />
         ))}
       </div>

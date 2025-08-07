@@ -1,31 +1,33 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import type { Metadata } from 'next'
 import './globals.css'
 import StarTrail from '../components/StarTrail'
 import CustomCursor from '../components/CustomCursor'
 import Navigation from '../components/Navigation'
+import { useCursor } from '@/hooks/useCursor'
+import { PERSONAL_INFO } from '@/constants'
 
 // export const metadata: Metadata = {
 //   title: 'Annabel Goldman',
 //   description: 'Software Engineer & Developer Portfolio',
 // }
 
+/**
+ * Root Layout Component
+ * Main layout wrapper with global navigation and cursor functionality
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const [cursorEnabled, setCursorEnabled] = useState(true)
-
-  const toggleCursor = () => {
-    setCursorEnabled(!cursorEnabled)
-  }
+  const { cursorEnabled, toggleCursor } = useCursor(true)
 
   return (
     <html lang="en">
       <head>
-        <title>Annabel Goldman</title>
+        <title>{PERSONAL_INFO.COPYRIGHT_NAME}</title>
         <meta name="description" content="Software Engineer & Developer Portfolio" />
         <link rel="icon" href="/image.png" type="image/png" />
       </head>

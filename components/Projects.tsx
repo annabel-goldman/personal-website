@@ -1,71 +1,14 @@
 'use client'
 
 import React, { useState } from 'react'
+import ProjectCard from '@/components/ui/ProjectCard'
+import { projects } from '@/data/projects'
+import { Project } from '@/types'
 
-interface Project {
-  id: number
-  title: string
-  description: string
-  technologies: string[]
-  image: string
-  link: string
-  github: string
-  demo: string
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Smart Closet',
-    description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
-    technologies: ['React', 'OpenAI', 'Gemini', 'AWS', 'AI/ML'],
-    image: '/smart-closet/SmartCloset1.jpg',
-    link: 'https://github.com/annabel-goldman/smart-closet-submission',
-    github: 'https://github.com/annabel-goldman/smart-closet-submission',
-    demo: 'https://github.com/annabel-goldman/smart-closet-submission'
-  },
-  {
-    id: 3,
-    title: 'Family Cookbook',
-    description: 'A static HTML archive for family recipes, built to improve my AWS skills. I hosted the site on S3 and managed the domain with Route 53. If I redid it, I’d use a modern tech stack for more flexibility.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'AWS'],
-    image: '/family-cookbook/Cookbook1.jpg',
-    link: 'http://goldmanfamilycookbook.com/',
-    github: '',
-    demo: 'http://goldmanfamilycookbook.com/'
-  },
-  {
-    id: 4,
-    title: 'Fairytales 4 Kids',
-    description: 'Simple html site with CHATGPT 4 generated stories and and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
-    technologies: ['React', 'GPT-4', 'DALL·E', 'AI Generated Content'],
-    image: '/fairytales4kids/Fairytales1.jpg',
-    link: 'https://fairytales4kids.com/',
-    github: 'https://github.com/annabel-goldman/fairytales4kids',
-    demo: 'https://fairytales4kids.com/'
-  },
-  {
-    id: 5,
-    title: 'Start Small: Master CS Algorithms',
-    description: 'A blog for students learning CS algorithms, with approachable explanations and problem breakdowns. Designed to make complex algorithms accessible to beginners.',
-    technologies: ['Next.js', 'React', 'Blog', 'Algorithms'],
-    image: '/start-small/start-small.jpeg',
-    link: 'https://annabel-goldman.github.io/cs-algorithms/',
-    github: 'https://github.com/annabel-goldman/cs-algorithms',
-    demo: 'https://annabel-goldman.github.io/cs-algorithms/'
-  },
-  {
-    id: 6,
-    title: 'Visual Art Gallery',
-    description: 'My digital art gallery to keep track of my artwork.',
-    technologies: ['React 19.1.0', 'CSS3', 'Google Fonts', 'Responsive Design'],
-    image: '/visual-art/visual-art-gallery.png',
-    link: 'https://annabel-goldman.github.io/visual-art/',
-    github: 'https://github.com/annabel-goldman/visual-art',
-    demo: 'https://annabel-goldman.github.io/visual-art/'
-  }
-]
-
+/**
+ * Projects Component
+ * Displays a grid of portfolio projects with modal functionality
+ */
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -96,125 +39,139 @@ export default function Projects() {
                 style={{ borderRadius: 0 }}
                 onClick={() => openModal(project)}
               >
-                {/* Background image that appears on hover */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-20 transition-opacity duration-500 ease-in-out pointer-events-none"
-                  style={{ 
-                    backgroundImage: `url(${project.image})`,
-                    filter: 'blur(2px)'
-                  }}
-                />
-                
-                {/* Background overlay for hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cream-50/0 to-cream-50/0 group-hover:from-cream-50/5 group-hover:to-cream-50/10 transition-all duration-300 ease-in-out pointer-events-none" />
-                
-                {/* Content container with relative positioning */}
-                <div className="relative z-10 w-full">
-                  {/* Project Title */}
-                  <h3 className="text-2xl font-bold font-serif text-cream-50 mb-2 text-left transition-all duration-300 group-hover:text-cream-100 origin-left">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                  <div className="w-full h-full" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                    backgroundSize: '20px 20px'
+                  }}></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-cream-50 mb-4 group-hover:text-white transition-colors duration-300">
                     {project.title}
                   </h3>
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 justify-start mb-4">
-                    {project.technologies.map((tech, techIdx) => (
-                      <span
-                        key={tech}
-                        className="text-xs text-cream-50 font-serif px-2 py-1 rounded-sm"
-                        style={{ borderRadius: 0 }}
+                  
+                  <p className="text-cream-100/80 text-sm leading-relaxed mb-6 group-hover:text-cream-50 transition-colors duration-300 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies - Show first 3 */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 3).map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="px-2 py-1 bg-cream-50/10 text-cream-50 text-xs font-medium rounded border border-cream-50/20 group-hover:bg-cream-50/20 transition-colors duration-300"
                       >
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 3 && (
+                      <span className="px-2 py-1 text-cream-50/60 text-xs">
+                        +{project.technologies.length - 3} more
+                      </span>
+                    )}
                   </div>
-                  {/* Click indicator */}
-                  <div className="text-cream-50/70 font-serif text-sm transition-all duration-300 group-hover:text-cream-100">
-                    Click to view details →
+
+                  {/* Hover indicator */}
+                  <div className="flex items-center text-cream-50/70 text-sm group-hover:text-cream-50 transition-colors duration-300">
+                    <span>View Details</span>
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
-                
-                {/* Subtle border animation on hover */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-cream-50/20 transition-all duration-300 ease-in-out pointer-events-none z-20" />
               </div>
-            )
+            );
           })}
         </div>
       </div>
 
       {/* Modal */}
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-navy-800 border border-cream-50 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Modal Header */}
-            <div className="flex justify-between items-center p-6 border-b border-cream-50">
-              <h2 className="text-3xl font-bold text-cream-50 font-serif">
-                {selectedProject.title}
-              </h2>
+        <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4" onClick={closeModal}>
+          <div className="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="p-8">
+              {/* Close button */}
               <button
                 onClick={closeModal}
-                className="text-cream-50 hover:text-cream-200 transition-colors duration-200"
+                className="absolute top-4 right-4 text-navy-800 hover:text-navy-600 transition-colors duration-200"
               >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            </div>
 
-            {/* Modal Content */}
-            <div className="p-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Project Image */}
-                <div className="space-y-4">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-64 object-cover border border-cream-50/20"
-                  />
+              {/* Project content */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-navy-700 leading-relaxed text-lg">
+                    {selectedProject.description}
+                  </p>
                 </div>
 
-                {/* Project Details */}
-                <div className="flex flex-col h-64">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cream-50 font-serif mb-3">
-                      About this project
-                    </h3>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {selectedProject.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-sm text-cream-50/70 font-serif"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-cream-100/90 leading-relaxed font-serif text-base">
-                      {selectedProject.description}
-                    </p>
+                {/* Image */}
+                <div className="bg-cream-100 p-6 border border-navy-200">
+                  <div className="aspect-video flex items-center justify-center">
+                    <img 
+                      src={selectedProject.image} 
+                      alt={selectedProject.title}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
+                </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4 mt-auto">
-                    {selectedProject.title !== 'Smart Closet' && (
-                      <a
-                        href={selectedProject.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border border-cream-50 text-cream-50 px-6 py-3 font-serif font-medium hover:bg-cream-50 hover:text-navy-800 transition-colors duration-200 text-center"
+                {/* Technologies */}
+                <div>
+                  <h3 className="text-xl font-bold text-navy-900 mb-3">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-cream-100 text-navy-800 text-sm font-medium border border-navy-200"
                       >
-                        View Live Site
-                      </a>
-                    )}
-                    {selectedProject.github && selectedProject.title !== 'Crosswordr' && (
-                      <a
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border border-cream-50 text-cream-50 px-6 py-3 font-serif font-medium hover:bg-cream-50 hover:text-navy-800 transition-colors duration-200 text-center"
-                      >
-                        View Code
-                      </a>
-                    )}
+                        {tech}
+                      </span>
+                    ))}
                   </div>
+                </div>
+
+                {/* Links */}
+                <div className="flex flex-wrap gap-4 pt-4">
+                  {selectedProject.link && (
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-navy-800 text-white px-6 py-3 font-medium hover:bg-navy-700 transition-colors duration-200"
+                    >
+                      View Project
+                    </a>
+                  )}
+                  {selectedProject.github && (
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-navy-800 text-navy-800 px-6 py-3 font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {selectedProject.demo && selectedProject.demo !== selectedProject.link && (
+                    <a
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-navy-800 text-navy-800 px-6 py-3 font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
+                    >
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

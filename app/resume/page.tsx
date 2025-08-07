@@ -2,17 +2,19 @@
 
 import React, { useState } from 'react'
 import Footer from '@/components/Footer'
+import { ASSETS } from '@/constants'
+import { downloadFile } from '@/utils'
+
+/**
+ * Resume Page Component
+ * Interactive resume viewer with download functionality
+ */
 
 export default function Resume() {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/resume/Annabel_Goldman_Resume (1).pdf'
-    link.download = 'Annabel_Goldman_Resume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    downloadFile(ASSETS.RESUME_PDF, 'Annabel_Goldman_Resume.pdf')
   }
 
   return (
@@ -26,7 +28,7 @@ export default function Resume() {
             onMouseLeave={() => setIsHovered(false)}
           >
             <img
-              src="/resume/Screenshot 2025-06-27 at 5.56.57 PM.png"
+              src={ASSETS.RESUME_IMAGE}
               alt="Annabel Goldman Resume"
               className="w-full h-full object-contain"
               style={{ maxHeight: 'calc(100vh - 4rem)' }}

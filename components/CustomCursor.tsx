@@ -1,11 +1,12 @@
 'use client'
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react'
+import { ASSETS, UI, ANIMATION } from '@/constants'
+import { CustomCursorProps } from '@/types'
 
-const CURSOR_IMAGE = '/image.png';
-
-interface CustomCursorProps {
-  isEnabled: boolean;
-}
+/**
+ * CustomCursor Component
+ * Displays a custom cursor that follows mouse movement
+ */
 
 const CustomCursor: React.FC<CustomCursorProps> = ({ isEnabled }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -27,8 +28,8 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ isEnabled }) => {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isEnabled) return;
-      cursor.style.left = `${e.clientX - 15}px`;
-      cursor.style.top = `${e.clientY - 15}px`;
+      cursor.style.left = `${e.clientX - UI.CURSOR_OFFSET}px`;
+      cursor.style.top = `${e.clientY - UI.CURSOR_OFFSET}px`;
       // Ensure cursor stays visible during movement
       cursor.style.opacity = '1';
       cursor.style.visibility = 'visible';
@@ -57,7 +58,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ isEnabled }) => {
         cursor.style.visibility = 'visible';
         cursor.style.opacity = '1';
       }
-    }, 100);
+          }, ANIMATION.CURSOR_VISIBILITY_CHECK_INTERVAL);
 
     // Cleanup
     return () => {
@@ -87,17 +88,17 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ isEnabled }) => {
       ref={cursorRef}
       style={{
         position: 'fixed',
-        width: '30px',
-        height: '30px',
+        width: `${UI.CURSOR_SIZE}px`,
+        height: `${UI.CURSOR_SIZE}px`,
         pointerEvents: 'none',
-        zIndex: 99999,
+        zIndex: UI.CURSOR_Z_INDEX,
         opacity: isEnabled ? 1 : 0,
         visibility: isEnabled ? 'visible' : 'hidden',
         transition: 'opacity 0.2s ease',
       }}
     >
       <img
-        src={CURSOR_IMAGE}
+        src={ASSETS.CURSOR_IMAGE}
         alt="cursor"
         style={{
           width: '100%',
