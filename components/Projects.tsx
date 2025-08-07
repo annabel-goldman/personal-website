@@ -91,31 +91,83 @@ export default function Projects() {
       {/* Modal */}
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4" onClick={closeModal}>
-          <div className="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="p-8">
+          <div className="bg-white max-w-4xl w-full max-h-[80vh] overflow-y-auto relative" onClick={(e) => e.stopPropagation()}>
+            <div className="p-6">
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-navy-800 hover:text-navy-600 transition-colors duration-200"
+                className="absolute top-4 right-4 text-navy-800 hover:text-navy-600 transition-colors duration-200 z-10"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              {/* Project content */}
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-3xl font-bold text-navy-900 mb-4">
-                    {selectedProject.title}
-                  </h2>
-                  <p className="text-navy-700 leading-relaxed text-lg">
-                    {selectedProject.description}
-                  </p>
+              {/* Project content - using grid layout for better space usage */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Left column - Text content */}
+                <div className="space-y-4">
+                  <div>
+                    <h2 className="text-2xl font-bold text-navy-900 mb-3 pr-8">
+                      {selectedProject.title}
+                    </h2>
+                    <p className="text-navy-700 leading-relaxed text-base">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+
+                  {/* Technologies */}
+                  <div>
+                    <h3 className="text-lg font-bold text-navy-900 mb-2">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech, index) => (
+                        <span 
+                          key={index}
+                          className="px-2 py-1 bg-cream-100 text-navy-800 text-xs font-medium border border-navy-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    {selectedProject.link && (
+                      <a
+                        href={selectedProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-navy-800 text-white px-4 py-2 text-sm font-medium hover:bg-navy-700 transition-colors duration-200"
+                      >
+                        View Project
+                      </a>
+                    )}
+                    {selectedProject.github && (
+                      <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-navy-800 text-navy-800 px-4 py-2 text-sm font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {selectedProject.demo && selectedProject.demo !== selectedProject.link && (
+                      <a
+                        href={selectedProject.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-navy-800 text-navy-800 px-4 py-2 text-sm font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
+                      >
+                        Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                {/* Image */}
-                <div className="bg-cream-100 p-6 border border-navy-200">
+                {/* Right column - Image */}
+                <div className="bg-cream-100 p-4 border border-navy-200">
                   <div className="aspect-video flex items-center justify-center">
                     <img 
                       src={selectedProject.image} 
@@ -123,55 +175,6 @@ export default function Projects() {
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>
-                </div>
-
-                {/* Technologies */}
-                <div>
-                  <h3 className="text-xl font-bold text-navy-900 mb-3">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.technologies.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 py-1 bg-cream-100 text-navy-800 text-sm font-medium border border-navy-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Links */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                  {selectedProject.link && (
-                    <a
-                      href={selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-navy-800 text-white px-6 py-3 font-medium hover:bg-navy-700 transition-colors duration-200"
-                    >
-                      View Project
-                    </a>
-                  )}
-                  {selectedProject.github && (
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border border-navy-800 text-navy-800 px-6 py-3 font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                  {selectedProject.demo && selectedProject.demo !== selectedProject.link && (
-                    <a
-                      href={selectedProject.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border border-navy-800 text-navy-800 px-6 py-3 font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
-                    >
-                      Demo
-                    </a>
-                  )}
                 </div>
               </div>
             </div>

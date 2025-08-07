@@ -54,25 +54,5 @@ export const projects: Project[] = [
     link: 'https://visual-art-gallery-puce.vercel.app/',
     github: 'https://github.com/annabel-goldman/visual-art-gallery',
     demo: 'https://visual-art-gallery-puce.vercel.app/'
-  },
-  {
-    id: 7,
-    title: 'Crosswordr',
-    description: 'Interactive crossword puzzle generator and solver. Built as a fun project to explore puzzle algorithms and user interface design.',
-    technologies: ['JavaScript', 'HTML', 'CSS', 'Algorithms'],
-    image: '/crosswordr/Crosswordr1.jpg',
-    link: 'https://github.com/annabel-goldman/crosswordr',
-    github: 'https://github.com/annabel-goldman/crosswordr',
-    demo: 'https://github.com/annabel-goldman/crosswordr'
-  },
-  {
-    id: 8,
-    title: 'Mayfest',
-    description: 'Event management and promotion website for Northwestern\'s annual music festival. Features artist lineup, ticket sales, and event information.',
-    technologies: ['React', 'Node.js', 'Event Management', 'Web Design'],
-    image: '/mayfest/Mayfest1.jpg',
-    link: 'https://github.com/annabel-goldman/mayfest',
-    github: 'https://github.com/annabel-goldman/mayfest',
-    demo: 'https://github.com/annabel-goldman/mayfest'
   }
 ]; 
