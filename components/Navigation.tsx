@@ -4,7 +4,12 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export default function Navigation() {
+interface NavigationProps {
+  cursorEnabled: boolean;
+  onCursorToggle: () => void;
+}
+
+export default function Navigation({ cursorEnabled, onCursorToggle }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -38,37 +43,49 @@ export default function Navigation() {
               Annabel
             </Link>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className={`font-medium px-2 py-1 border-2 ring-2 ${
+              className={`font-medium px-2 py-1 transition-colors ${
                 pathname === '/'
-                  ? 'text-navy-800 border-navy-800 ring-navy-200'
-                  : 'text-navy-800/70 hover:text-navy-800 border-transparent ring-transparent'
+                  ? 'text-navy-800'
+                  : 'text-navy-800/70 hover:text-navy-800'
               }`}
             >
               Home
             </Link>
             <Link
               href="/projects"
-              className={`font-medium px-2 py-1 border-2 ring-2 ${
+              className={`font-medium px-2 py-1 transition-colors ${
                 pathname.startsWith('/projects')
-                  ? 'text-navy-800 border-navy-800 ring-navy-200'
-                  : 'text-navy-800/70 hover:text-navy-800 border-transparent ring-transparent'
+                  ? 'text-navy-800'
+                  : 'text-navy-800/70 hover:text-navy-800'
               }`}
             >
               Projects
             </Link>
             <Link
               href="/resume"
-              className={`font-medium px-2 py-1 border-2 ring-2 ${
+              className={`font-medium px-2 py-1 transition-colors ${
                 pathname.startsWith('/resume')
-                  ? 'text-navy-800 border-navy-800 ring-navy-200'
-                  : 'text-navy-800/70 hover:text-navy-800 border-transparent ring-transparent'
+                  ? 'text-navy-800'
+                  : 'text-navy-800/70 hover:text-navy-800'
               }`}
             >
               Resume
             </Link>
+            {/* Cursor Toggle */}
+            <button
+              onClick={onCursorToggle}
+              className={`font-medium px-2 py-1 transition-colors ${
+                cursorEnabled
+                  ? 'text-navy-800'
+                  : 'text-navy-800/70 hover:text-navy-800'
+              }`}
+              aria-label="Toggle custom cursor"
+            >
+              Cursor: {cursorEnabled ? 'ON' : 'OFF'}
+            </button>
           </div>
           <div className="md:hidden">
             <button 
@@ -90,10 +107,10 @@ export default function Navigation() {
               <Link
                 href="/"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   pathname === '/'
-                    ? 'text-navy-800 bg-navy-50 border border-navy-200'
-                    : 'text-navy-800/70 hover:text-navy-800 hover:bg-navy-50'
+                    ? 'text-navy-800'
+                    : 'text-navy-800/70 hover:text-navy-800'
                 }`}
               >
                 Home
@@ -101,10 +118,10 @@ export default function Navigation() {
               <Link
                 href="/projects"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   pathname.startsWith('/projects')
-                    ? 'text-navy-800 bg-navy-50 border border-navy-200'
-                    : 'text-navy-800/70 hover:text-navy-800 hover:bg-navy-50'
+                    ? 'text-navy-800'
+                    : 'text-navy-800/70 hover:text-navy-800'
                 }`}
               >
                 Projects
@@ -112,14 +129,28 @@ export default function Navigation() {
               <Link
                 href="/resume"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   pathname.startsWith('/resume')
-                    ? 'text-navy-800 bg-navy-50 border border-navy-200'
-                    : 'text-navy-800/70 hover:text-navy-800 hover:bg-navy-50'
+                    ? 'text-navy-800'
+                    : 'text-navy-800/70 hover:text-navy-800'
                 }`}
               >
                 Resume
               </Link>
+              {/* Mobile Cursor Toggle */}
+              <button
+                onClick={() => {
+                  onCursorToggle();
+                  closeMobileMenu();
+                }}
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  cursorEnabled
+                    ? 'text-navy-800'
+                    : 'text-navy-800/70 hover:text-navy-800'
+                }`}
+              >
+                Cursor: {cursorEnabled ? 'ON' : 'OFF'}
+              </button>
             </div>
           </div>
         )}

@@ -135,10 +135,36 @@ html:hover::-webkit-scrollbar {
   box-shadow: 0 10px 25px rgba(55, 48, 163, 0.3);
 }
 
-body, html {
+/* Hide default cursor only when custom cursor is enabled */
+.custom-cursor-enabled,
+.custom-cursor-enabled *,
+.custom-cursor-enabled body,
+.custom-cursor-enabled html {
   cursor: none !important;
 }
 
-a, button, [role="button"], .btn-hover, input[type="button"], input[type="submit"], label[for], .cursor-pointer {
+.custom-cursor-enabled a,
+.custom-cursor-enabled button,
+.custom-cursor-enabled [role="button"],
+.custom-cursor-enabled .btn-hover,
+.custom-cursor-enabled input[type="button"],
+.custom-cursor-enabled input[type="submit"],
+.custom-cursor-enabled input[type="text"],
+.custom-cursor-enabled input[type="email"],
+.custom-cursor-enabled textarea,
+.custom-cursor-enabled select,
+.custom-cursor-enabled label[for],
+.custom-cursor-enabled .cursor-pointer,
+.custom-cursor-enabled div,
+.custom-cursor-enabled span,
+.custom-cursor-enabled p,
+.custom-cursor-enabled h1,
+.custom-cursor-enabled h2,
+.custom-cursor-enabled h3,
+.custom-cursor-enabled h4,
+.custom-cursor-enabled h5,
+.custom-cursor-enabled h6,
+.custom-cursor-enabled img,
+.custom-cursor-enabled svg {
   cursor: none !important;
 } 

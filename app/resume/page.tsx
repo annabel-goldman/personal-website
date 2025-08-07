@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function Resume() {
@@ -18,7 +17,6 @@ export default function Resume() {
 
   return (
     <main className="min-h-screen">
-      <Navigation />
       <div className="relative w-full h-screen flex items-center justify-center pt-16">
         {/* Resume Image */}
         <div className="w-full h-full flex items-center justify-center">

@@ -3,10 +3,16 @@ import React, { useEffect, useRef } from 'react';
 
 const STAR_IMAGE = '/image.png';
 
-const StarTrail: React.FC = () => {
+interface StarTrailProps {
+  isEnabled: boolean;
+}
+
+const StarTrail: React.FC<StarTrailProps> = ({ isEnabled }) => {
   const trailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!isEnabled) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const star = document.createElement('img');
       star.src = STAR_IMAGE;
@@ -34,7 +40,9 @@ const StarTrail: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isEnabled]);
+
+  if (!isEnabled) return null;
 
   return (
     <div
