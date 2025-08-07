@@ -11,9 +11,9 @@ export const projects: Project[] = [
     description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
     technologies: ['React', 'OpenAI', 'Gemini', 'AWS', 'AI/ML'],
     image: '/smart-closet/SmartCloset1.jpg',
-    link: 'https://github.com/annabel-goldman/smart-closet-submission',
+    link: '',
     github: 'https://github.com/annabel-goldman/smart-closet-submission',
-    demo: 'https://github.com/annabel-goldman/smart-closet-submission'
+    demo: ''
   },
   {
     id: 3,
@@ -41,9 +41,9 @@ export const projects: Project[] = [
     description: 'Complete course website I designed and built for a CS algorithms course. Features interactive lessons, progress tracking, and comprehensive algorithm explanations.',
     technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     image: '/start-small/start-small.jpeg',
-    link: 'https://start-small-master-cs-algorithms.vercel.app/',
-    github: 'https://github.com/annabel-goldman/start-small-master-cs-algorithms',
-    demo: 'https://start-small-master-cs-algorithms.vercel.app/'
+    link: 'https://annabel-goldman.github.io/cs-algorithms/',
+    github: 'https://github.com/annabel-goldman/cs-algorithms',
+    demo: 'https://annabel-goldman.github.io/cs-algorithms/'
   },
   {
     id: 6,
@@ -51,8 +51,8 @@ export const projects: Project[] = [
     description: 'A curated showcase of my visual art and design work, featuring digital illustrations, traditional media, and experimental pieces.',
     technologies: ['React', 'Next.js', 'CSS', 'Design'],
     image: '/visual-art/visual-art-gallery.png',
-    link: 'https://visual-art-gallery-puce.vercel.app/',
-    github: 'https://github.com/annabel-goldman/visual-art-gallery',
-    demo: 'https://visual-art-gallery-puce.vercel.app/'
+    link: 'https://annabel-goldman.github.io/visual-art/',
+    github: 'https://github.com/annabel-goldman/visual-art',
+    demo: 'https://annabel-goldman.github.io/visual-art/'
   }
 ]; 

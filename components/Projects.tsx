@@ -93,28 +93,27 @@ export default function Projects() {
         <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4" onClick={closeModal}>
           <div className="bg-white max-w-4xl w-full max-h-[80vh] overflow-y-auto relative" onClick={(e) => e.stopPropagation()}>
             <div className="p-6">
-              {/* Close button */}
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 text-navy-800 hover:text-navy-600 transition-colors duration-200 z-10"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
               {/* Project content - using grid layout for better space usage */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Left column - Text content */}
                 <div className="space-y-4">
-                  <div>
-                    <h2 className="text-2xl font-bold text-navy-900 mb-3 pr-8">
+                  {/* Close button positioned in the text column to avoid overlap */}
+                  <div className="flex justify-between items-start">
+                    <h2 className="text-2xl font-bold text-navy-900 mb-3">
                       {selectedProject.title}
                     </h2>
-                    <p className="text-navy-700 leading-relaxed text-base">
-                      {selectedProject.description}
-                    </p>
+                    <button
+                      onClick={closeModal}
+                      className="text-navy-800 hover:text-navy-600 transition-colors duration-200 flex-shrink-0"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   </div>
+                  <p className="text-navy-700 leading-relaxed text-base">
+                    {selectedProject.description}
+                  </p>
 
                   {/* Technologies */}
                   <div>
