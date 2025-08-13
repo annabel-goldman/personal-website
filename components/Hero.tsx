@@ -24,10 +24,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="h-screen pt-16 flex flex-row items-stretch justify-start bg-cream-50 relative overflow-hidden">
+    <section className="hero-section h-screen pt-16 bg-cream-50 relative overflow-hidden w-full flex">
       {/* Left: Text Content */}
-      <div className="flex flex-col justify-center max-w-4xl w-full h-full px-6 sm:px-8 md:pl-16 md:pr-16 relative z-10 carousel-text text-center md:text-left" style={{ flex: '0 0 60%' }}>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight w-full">
+      <div className="flex flex-col justify-center h-full px-6 sm:px-8 lg:pl-16 lg:pr-8 relative z-10 carousel-text text-center lg:text-left" style={{ width: '60%' }}>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight">
           {isLoaded ? (
             <TypewriterText 
               text={PERSONAL_INFO.NAME}
@@ -39,17 +39,16 @@ export default function Hero() {
             <span className="text-navy-800">{PERSONAL_INFO.NAME}</span>
           )}
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-2 sm:mb-3 font-medium w-full">
+        <p className="text-lg sm:text-xl md:text-2xl text-navy-800 mb-2 sm:mb-3 font-medium">
           {PERSONAL_INFO.TITLE}
         </p>
-        <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl w-full leading-relaxed">
+        <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl leading-relaxed">
           {PERSONAL_INFO.DESCRIPTION}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start w-full text-navy-800">
-          <a href={LINKS.EMAIL} className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center lg:items-start text-navy-800/70">
+          <a href={`mailto:${LINKS.EMAIL}`} className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             Contact Me
           </a>
@@ -67,15 +66,23 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* Right: Carousel */}
-      <div className="hidden lg:flex items-center justify-center h-full w-full md:w-[500px] md:pl-4" style={{ flex: '0 0 40%' }}>
+      {/* Right: Carousel - absolutely flush to right edge, no padding/margin */}
+      <div className="hidden lg:block h-full" style={{ width: '40%' }}>
         <Carousel />
       </div>
       <style jsx>{`
-        @media (max-width: 1045px) {
+        @media (max-width: 1024px) {
           .carousel-text {
-            flex: 0 0 100% !important;
+            width: 100% !important;
           }
+          .hero-section {
+            display: block !important;
+          }
+        }
+        .hero-section {
+          margin: 0;
+          padding-left: 0;
+          padding-right: 0;
         }
       `}</style>
     </section>

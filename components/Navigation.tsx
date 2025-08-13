@@ -39,41 +39,65 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         ? 'bg-white/80 backdrop-blur-md shadow-lg border-navy-800/30' 
         : 'bg-white/60 backdrop-blur-sm border-navy-800/20'
     }`}>
-      <div className="max-w-6xl mx-auto px-4">
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex items-center h-16 w-full">
+        {/* Left section: Only title - 60% width to match text content */}
+        <div className="flex items-center pl-16" style={{ width: '60%' }}>
+          {/* Title/Logo on far left */}
+          <div className="text-xl font-bold text-navy-800">
+            Annabel
+          </div>
+        </div>
+        
+        {/* Right section: All nav buttons evenly spaced above carousel - 40% width */}
+        <div className="flex items-center justify-evenly" style={{ width: '40%' }}>
+          <Link
+            href="/"
+            className={`font-medium px-2 py-1 transition-colors ${
+              isActivePath(pathname, '/')
+                ? 'text-navy-800'
+                : 'text-navy-800/70 hover:text-navy-800'
+            }`}
+          >
+            Home
+          </Link>
+          {NAVIGATION_ITEMS.filter(item => item.href !== '/').map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`font-medium px-2 py-1 transition-colors ${
+                isActivePath(pathname, item.href)
+                  ? 'text-navy-800'
+                  : 'text-navy-800/70 hover:text-navy-800'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          {/* Cursor Toggle */}
+          <button
+            onClick={onCursorToggle}
+            className={`font-medium px-2 py-1 transition-colors ${
+              cursorEnabled
+                ? 'text-navy-800'
+                : 'text-navy-800/70 hover:text-navy-800'
+            }`}
+            aria-label="Toggle custom cursor"
+          >
+            Cursor: {cursorEnabled ? 'ON' : 'OFF'}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile/Tablet Navigation */}
+      <div className="lg:hidden max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-navy-800 hover:text-navy-800 transition-colors">
               Annabel
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
-            {NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`font-medium px-2 py-1 transition-colors ${
-                  isActivePath(pathname, item.href)
-                    ? 'text-navy-800'
-                    : 'text-navy-800/70 hover:text-navy-800'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            {/* Cursor Toggle */}
-            <button
-              onClick={onCursorToggle}
-              className={`font-medium px-2 py-1 transition-colors ${
-                cursorEnabled
-                  ? 'text-navy-800'
-                  : 'text-navy-800/70 hover:text-navy-800'
-              }`}
-              aria-label="Toggle custom cursor"
-            >
-              Cursor: {cursorEnabled ? 'ON' : 'OFF'}
-            </button>
-          </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={toggleMobileMenu}
               className="text-navy-800 hover:text-navy-800 transition-colors duration-200"
@@ -88,7 +112,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-navy-800/20 bg-white/95 backdrop-blur-md">
+          <div className="lg:hidden border-t border-navy-800/20 bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {NAVIGATION_ITEMS.map((item) => (
                 <Link

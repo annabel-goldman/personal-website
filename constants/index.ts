@@ -32,8 +32,8 @@ export const ANIMATION = {
 // External links
 export const LINKS = {
   GITHUB: 'https://github.com/annabel-goldman',
-  LINKEDIN: 'https://linkedin.com/in/annabel-goldman',
-  EMAIL: 'mailto:annabelgoldman2025@u.northwestern.edu',
+  LINKEDIN: 'https://www.linkedin.com/in/annabel-goldman-43bba723a',
+  EMAIL: 'annabel.m.golman@gmail.com',
   NORTHWESTERN: 'https://northwestern.edu'
 } as const;
 
