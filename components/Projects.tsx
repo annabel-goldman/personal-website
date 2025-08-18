@@ -28,14 +28,18 @@ export default function Projects() {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-cream-50">
           {projects.map((project, idx) => {
-            // Calculate number of columns (default 3 for desktop)
-            const columns = 3;
-            const lastRowStart = projects.length - (projects.length % columns || columns);
-            const isLastRow = idx >= lastRowStart;
+            // Calculate if this item is in the last row for different breakpoints
+            const isLastRowMobile = idx === projects.length - 1; // 1 column: only last item
+            const isLastRowTablet = idx >= projects.length - (projects.length % 2 || 2); // 2 columns: last 1-2 items
+            const isLastRowDesktop = idx >= projects.length - (projects.length % 3 || 3); // 3 columns: last 1-3 items
+            
             return (
               <div
                 key={project.id}
-                className={`group relative flex flex-col justify-center items-start p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden${isLastRow ? '' : ' border-b'}`}
+                className={`group relative flex flex-col justify-center items-start p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden
+                  ${!isLastRowMobile ? 'border-b' : ''} 
+                  ${!isLastRowTablet ? 'md:border-b' : 'md:border-b-0'} 
+                  ${!isLastRowDesktop ? 'lg:border-b' : 'lg:border-b-0'}`}
                 style={{ 
                   borderRadius: 0,
                   height: 'calc((100vh - 128px) / 2)' // Half viewport height minus header (64px) and footer (64px)
