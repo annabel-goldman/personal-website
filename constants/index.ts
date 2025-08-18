@@ -33,7 +33,7 @@ export const ANIMATION = {
 export const LINKS = {
   GITHUB: 'https://github.com/annabel-goldman',
   LINKEDIN: 'https://www.linkedin.com/in/annabel-goldman-43bba723a',
-  EMAIL: 'annabel.m.golman@gmail.com',
+  EMAIL: 'annabel.m.goldman@gmail.com',
   NORTHWESTERN: 'https://northwestern.edu'
 } as const;
 

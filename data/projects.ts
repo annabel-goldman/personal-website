@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: 'Fairytales 4 Kids',
-    description: 'Simple html site with CHATGPT 4 generated stories and and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
+    description: 'Simple HTML site with ChatGPT-4 generated stories and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
     technologies: ['React', 'GPT-4', 'DALL·E', 'AI Generated Content'],
     image: '/fairytales4kids/Fairytales1.jpg',
     link: 'https://fairytales4kids.com/',
@@ -54,5 +54,15 @@ export const projects: Project[] = [
     link: 'https://annabel-goldman.github.io/visual-art/',
     github: 'https://github.com/annabel-goldman/visual-art',
     demo: 'https://annabel-goldman.github.io/visual-art/'
+  },
+  {
+    id: 7,
+    title: 'Chic Shit',
+    description: 'My fashion blog. Filled with my opinions on fashion and photos to go along with them. Made for fun in my free time.',
+    technologies: ['JavaScript', 'HTML', 'CSS', 'WebP Optimization'],
+    image: '/chic-shit-blog/chic-shit-blog.jpg',
+    link: 'https://annabel-goldman.github.io/chic-shit-blog/',
+    github: 'https://github.com/annabel-goldman/chic-shit-blog',
+    demo: 'https://annabel-goldman.github.io/chic-shit-blog/'
   }
 ]; 
