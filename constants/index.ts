@@ -51,7 +51,7 @@ export const UI = {
 export const PERSONAL_INFO = {
   NAME: 'Annabel Marie Goldman',
   TITLE: 'Masters Student in Computer Science, Northwestern University',
-  DESCRIPTION: 'My research interests span computer science education, human-computer interaction, artificial intelligence, and web development.',
+  DESCRIPTION: 'My research interests span computer science education, human-computer interaction, artificial intelligence, and web development. I made this website myself!',
   COPYRIGHT_NAME: 'Annabel Goldman'
 } as const;
 
