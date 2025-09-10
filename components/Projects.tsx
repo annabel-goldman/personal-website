@@ -36,7 +36,7 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className={`group relative flex flex-col justify-start items-start p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden
+                className={`group relative flex flex-col justify-start items-start p-4 sm:p-4 md:p-4 lg:p-6 xl:p-8 2xl:p-10 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden
                   ${!isLastRowMobile ? 'border-b' : ''} 
                   ${!isLastRowTablet ? 'md:border-b' : 'md:border-b-0'} 
                   ${!isLastRowDesktop ? 'lg:border-b' : 'lg:border-b-0'}`}

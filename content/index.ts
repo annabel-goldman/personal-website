@@ -212,7 +212,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 4,
       title: 'Fairytales 4 Kids',
-      description: 'Simple HTML site with ChatGPT generated stories and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
+      description: 'Simple HTML site with ChatGPT generated stories and DALL·E-generated content.',
       technologies: [TECHNOLOGIES.REACT],
       image: '/projects/Fairytales1.jpg',
       link: 'https://fairytales4kids.com/',
