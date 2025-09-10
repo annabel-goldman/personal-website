@@ -212,7 +212,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 4,
       title: 'Fairytales 4 Kids',
-      description: 'Simple HTML site with ChatGPT-4 generated stories and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
+      description: 'Simple HTML site with ChatGPT generated stories and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
       technologies: [TECHNOLOGIES.REACT],
       image: '/projects/Fairytales1.jpg',
       link: 'https://fairytales4kids.com/',
@@ -232,7 +232,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 6,
       title: 'Visual Art Gallery',
-      description: 'A curated showcase of my visual art and design work, featuring digital illustrations, traditional media, and experimental pieces.',
+      description: 'A website that shows you some artwork I made.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS, TECHNOLOGIES.DESIGN],
       image: '/projects/visual-art-gallery.png',
       link: 'https://annabel-goldman.github.io/visual-art/',
@@ -242,7 +242,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 7,
       title: 'Chic Shit',
-      description: 'My fashion blog. Filled with my opinions on fashion and photos to go along with them. Made for fun in my free time.',
+      description: 'My fashion blog. Filled with my opinions on fashion and photos to go along with them.',
       technologies: [TECHNOLOGIES.JAVASCRIPT, TECHNOLOGIES.HTML, TECHNOLOGIES.CSS],
       image: '/projects/chic-shit-blog.jpg',
       link: 'https://annabel-goldman.github.io/chic-shit-blog/',
