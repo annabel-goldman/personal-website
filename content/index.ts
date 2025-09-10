@@ -233,7 +233,7 @@ export const PROJECTS_CONTENT = {
       id: 6,
       title: 'Visual Art Gallery',
       description: 'A website that shows you some artwork I made.',
-      technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS, TECHNOLOGIES.DESIGN],
+      technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
       image: '/projects/visual-art-gallery.png',
       link: 'https://annabel-goldman.github.io/visual-art/',
       github: 'https://github.com/annabel-goldman/visual-art',

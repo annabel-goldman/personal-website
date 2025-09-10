@@ -59,24 +59,9 @@ export default function Projects() {
                   <h3 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl font-bold text-white mb-1.5 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 font-serif">
                     {project.title}
                   </h3>
-                  <p className="text-xs sm:text-sm md:text-base lg:text-base xl:text-lg 2xl:text-lg text-cream-100 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 leading-relaxed font-serif max-w-none">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-base xl:text-lg 2xl:text-lg text-cream-100 leading-relaxed font-serif max-w-none">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
-                    {project.technologies.slice(0, 3).map((tech, techIdx) => (
-                      <span 
-                        key={techIdx}
-                        className="px-1.5 sm:px-2 md:px-3 lg:px-3 xl:px-4 py-0.5 sm:py-1 md:py-1.5 lg:py-1.5 xl:py-2 bg-white/10 text-white text-xs sm:text-xs md:text-sm lg:text-xs xl:text-sm font-medium border border-white/20 backdrop-blur-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="px-1.5 sm:px-2 md:px-3 lg:px-3 xl:px-4 py-0.5 sm:py-1 md:py-1.5 lg:py-1.5 xl:py-2 bg-white/10 text-white text-xs sm:text-xs md:text-sm lg:text-xs xl:text-sm font-medium border border-white/20 backdrop-blur-sm">
-                        {UI_LABELS.MORE_TECHNOLOGIES.replace('{count}', (project.technologies.length - 3).toString())}
-                      </span>
-                    )}
-                  </div>
                 </div>
               </div>
             );
