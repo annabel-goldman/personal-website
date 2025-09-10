@@ -34,7 +34,8 @@ export const LINKS = {
   GITHUB: 'https://github.com/annabel-goldman',
   LINKEDIN: 'https://www.linkedin.com/in/annabel-goldman-43bba723a',
   EMAIL: 'annabel.m.goldman@gmail.com',
-  NORTHWESTERN: 'https://northwestern.edu'
+  NORTHWESTERN: 'https://northwestern.edu',
+  CHILDHOOD_BLOG: 'https://annabelblog.blogspot.com/'
 } as const;
 
 // UI constants

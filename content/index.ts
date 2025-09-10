@@ -70,6 +70,7 @@ export const UI_LABELS = {
   CONTACT_ME: 'Contact Me',
   GITHUB: 'GitHub',
   LINKEDIN: 'LinkedIn',
+  CHILDHOOD_BLOG: 'Read about my childhood',
   
   // Project modal buttons
   VIEW_PROJECT: 'View Project',
@@ -232,7 +233,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 6,
       title: 'Visual Art Gallery',
-      description: 'A website that shows you some artwork I made.',
+      description: 'A website to hold all of the art work I made in high school. Hopefully I will be able to add to the collection when I have more free time!',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
       image: '/projects/visual-art-gallery.png',
       link: 'https://annabel-goldman.github.io/visual-art/',
