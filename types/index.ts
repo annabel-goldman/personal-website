@@ -8,7 +8,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  technologies: string[];
+  technologies: readonly string[];
   image: string;
   link: string;
   github: string;
@@ -25,17 +25,6 @@ export interface ResearchProject {
   image: string;
   link: string;
   category: string;
-}
-
-// Skills-related types
-export interface Skill {
-  name: string;
-  link: string;
-}
-
-export interface SkillGroup {
-  title: string;
-  skills: Skill[];
 }
 
 // Navigation-related types

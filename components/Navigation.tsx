@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { NavigationProps } from '@/types'
-import { NAVIGATION_ITEMS, ANIMATION } from '@/constants'
+import { NAVIGATION, PERSONAL_INFO, ACCESSIBILITY } from '@/content'
+import { ANIMATION } from '@/constants'
 import { isActivePath } from '@/utils'
 
 /**
@@ -45,7 +46,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         <div className="flex items-center pl-16" style={{ width: '60%' }}>
           {/* Title/Logo on far left */}
           <div className="text-xl font-bold text-navy-800">
-            Annabel
+            {PERSONAL_INFO.BRAND_NAME}
           </div>
         </div>
         
@@ -59,9 +60,9 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
                 : 'text-navy-800/70 hover:text-navy-800'
             }`}
           >
-            Home
+{NAVIGATION.ITEMS[0].label}
           </Link>
-          {NAVIGATION_ITEMS.filter(item => item.href !== '/').map((item) => (
+          {NAVIGATION.ITEMS.filter(item => item.href !== '/').map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -82,9 +83,9 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
                 ? 'text-navy-800'
                 : 'text-navy-800/70 hover:text-navy-800'
             }`}
-            aria-label="Toggle custom cursor"
+            aria-label={ACCESSIBILITY.TOGGLE_CURSOR}
           >
-            Cursor: {cursorEnabled ? 'ON' : 'OFF'}
+            {cursorEnabled ? NAVIGATION.CURSOR_TOGGLE.ON : NAVIGATION.CURSOR_TOGGLE.OFF}
           </button>
         </div>
       </div>
@@ -94,14 +95,14 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-navy-800 hover:text-navy-800 transition-colors">
-              Annabel
+              {PERSONAL_INFO.BRAND_NAME}
             </Link>
           </div>
           <div className="lg:hidden">
             <button 
               onClick={toggleMobileMenu}
               className="text-navy-800 hover:text-navy-800 transition-colors duration-200"
-              aria-label="Toggle mobile menu"
+              aria-label={ACCESSIBILITY.TOGGLE_MOBILE_MENU}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -114,7 +115,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-navy-800/20 bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {NAVIGATION_ITEMS.map((item) => (
+              {NAVIGATION.ITEMS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -140,7 +141,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
                     : 'text-navy-800/70 hover:text-navy-800'
                 }`}
               >
-                Cursor: {cursorEnabled ? 'ON' : 'OFF'}
+                {cursorEnabled ? NAVIGATION.CURSOR_TOGGLE.ON : NAVIGATION.CURSOR_TOGGLE.OFF}
               </button>
             </div>
           </div>

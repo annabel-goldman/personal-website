@@ -6,7 +6,7 @@ import StarTrail from '../components/StarTrail'
 import CustomCursor from '../components/CustomCursor'
 import Navigation from '../components/Navigation'
 import { useCursor } from '@/hooks/useCursor'
-import { PERSONAL_INFO } from '@/constants'
+import { PERSONAL_INFO } from '@/content'
 
 // export const metadata: Metadata = {
 //   title: 'Annabel Goldman',

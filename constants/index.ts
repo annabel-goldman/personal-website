@@ -8,8 +8,8 @@ export const ASSETS = {
   CURSOR_IMAGE: '/image.png',
   STAR_IMAGE: '/image.png',
   LOGO_PINK: '/logo-pink.png',
-  RESUME_PDF: '/resume/Annabel_Goldman_Resume (1).pdf',
-  RESUME_IMAGE: '/resume/Screenshot 2025-06-27 at 5.56.57 PM.png',
+  RESUME_PDF: '/resume/Annabel_Goldman_Resume.pdf',
+  RESUME_IMAGE: '/resume/Annabel_Goldman_Resume.png',
   CAROUSEL_IMAGES: [
     '/home-carosel/1.jpg',
     '/home-carosel/2.jpeg',
@@ -47,17 +47,5 @@ export const UI = {
   CURSOR_Z_INDEX: 99999
 } as const;
 
-// Personal information
-export const PERSONAL_INFO = {
-  NAME: 'Annabel Marie Goldman',
-  TITLE: 'Masters Student in Computer Science, Northwestern University',
-  DESCRIPTION: 'My research interests span computer science education, human-computer interaction, artificial intelligence, and web development. I made this website myself!',
-  COPYRIGHT_NAME: 'Annabel Goldman'
-} as const;
-
-// Navigation items
-export const NAVIGATION_ITEMS = [
-  { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/resume', label: 'Resume' }
-] as const; 
+// Note: Personal information and navigation items moved to /content/index.ts
+// Import them from there: import { PERSONAL_INFO, NAVIGATION } from '@/content' 

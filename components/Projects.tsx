@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import ProjectCard from '@/components/ui/ProjectCard'
-import { projects } from '@/data/projects'
 import { Project } from '@/types'
+import { UI_LABELS, ACCESSIBILITY, PROJECTS_CONTENT } from '@/content'
 
 /**
  * Projects Component
@@ -27,11 +27,11 @@ export default function Projects() {
     <section className="bg-navy-800" id="projects">
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-cream-50">
-          {projects.map((project, idx) => {
+          {PROJECTS_CONTENT.PROJECTS.map((project, idx) => {
             // Calculate if this item is in the last row for different breakpoints
-            const isLastRowMobile = idx === projects.length - 1; // 1 column: only last item
-            const isLastRowTablet = idx >= projects.length - (projects.length % 2 || 2); // 2 columns: last 1-2 items
-            const isLastRowDesktop = idx >= projects.length - (projects.length % 3 || 3); // 3 columns: last 1-3 items
+            const isLastRowMobile = idx === PROJECTS_CONTENT.PROJECTS.length - 1; // 1 column: only last item
+            const isLastRowTablet = idx >= PROJECTS_CONTENT.PROJECTS.length - (PROJECTS_CONTENT.PROJECTS.length % 2 || 2); // 2 columns: last 1-2 items
+            const isLastRowDesktop = idx >= PROJECTS_CONTENT.PROJECTS.length - (PROJECTS_CONTENT.PROJECTS.length % 3 || 3); // 3 columns: last 1-3 items
             
             return (
               <div
@@ -73,7 +73,7 @@ export default function Projects() {
                     ))}
                     {project.technologies.length > 3 && (
                       <span className="px-1.5 sm:px-2 md:px-3 lg:px-3 xl:px-4 py-0.5 sm:py-1 md:py-1.5 lg:py-1.5 xl:py-2 bg-white/10 text-white text-xs sm:text-xs md:text-sm lg:text-xs xl:text-sm font-medium border border-white/20 backdrop-blur-sm">
-                        +{project.technologies.length - 3} more
+                        {UI_LABELS.MORE_TECHNOLOGIES.replace('{count}', (project.technologies.length - 3).toString())}
                       </span>
                     )}
                   </div>
@@ -113,7 +113,7 @@ export default function Projects() {
 
                   {/* Technologies */}
                   <div>
-                    <h3 className="text-lg font-bold text-navy-900 mb-2">Technologies Used</h3>
+                    <h3 className="text-lg font-bold text-navy-900 mb-2">{UI_LABELS.TECHNOLOGIES_USED}</h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, index) => (
                         <span 
@@ -135,7 +135,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="bg-navy-800 text-white px-4 py-2 text-sm font-medium hover:bg-navy-700 transition-colors duration-200"
                       >
-                        View Project
+                        {UI_LABELS.VIEW_PROJECT}
                       </a>
                     )}
                     {selectedProject.github && (
@@ -145,7 +145,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="border border-navy-800 text-navy-800 px-4 py-2 text-sm font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
                       >
-                        GitHub
+                        {UI_LABELS.GITHUB}
                       </a>
                     )}
                     {selectedProject.demo && selectedProject.demo !== selectedProject.link && (
@@ -155,21 +155,19 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="border border-navy-800 text-navy-800 px-4 py-2 text-sm font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
                       >
-                        Demo
+                        {UI_LABELS.DEMO}
                       </a>
                     )}
                   </div>
                 </div>
 
                 {/* Right column - Image */}
-                <div className="bg-cream-100 p-4 border border-navy-200">
-                  <div className="aspect-video flex items-center justify-center">
-                    <img 
-                      src={selectedProject.image} 
-                      alt={selectedProject.title}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
+                <div className="bg-cream-100 p-4 border border-navy-200 flex items-center justify-center">
+                  <img 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
               </div>
             </div>

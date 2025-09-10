@@ -1,6 +1,7 @@
 import React from 'react'
 import ResearchCard from '@/components/ui/ResearchCard'
 import { researchProjects } from '@/data/research'
+import { PAGE_CONTENT } from '@/content'
 
 /**
  * Research Component
@@ -13,12 +14,11 @@ export default function Research() {
         {/* Header - Clear Visual Hierarchy */}
         <div className="mb-16">
           <h1 className="text-5xl font-bold text-navy-900 mb-6 font-serif">
-            Research Experience
+            {PAGE_CONTENT.RESEARCH.TITLE}
           </h1>
           <div className="w-24 h-1 bg-navy-900 mb-8"></div>
           <p className="text-xl text-navy-700 max-w-3xl leading-relaxed font-serif">
-            Exploring the intersection of AI, human-computer interaction, and educational technology 
-            through cutting-edge research at Northwestern University.
+            {PAGE_CONTENT.RESEARCH.SUBTITLE}
           </p>
         </div>
 

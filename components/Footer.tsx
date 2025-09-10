@@ -1,5 +1,5 @@
 import React from 'react'
-import { PERSONAL_INFO } from '@/constants'
+import { PERSONAL_INFO, UI_LABELS } from '@/content'
 
 /**
  * Footer Component
@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-navy-800 text-white py-8">
       <div className="max-w-6xl mx-auto px-4">
         <p className="text-white text-sm text-center">
-          © {currentYear} {PERSONAL_INFO.COPYRIGHT_NAME}. All rights reserved.
+          {UI_LABELS.FOOTER_COPYRIGHT.replace('{year}', currentYear.toString()).replace('{name}', PERSONAL_INFO.COPYRIGHT_NAME)}
         </p>
       </div>
     </footer>
