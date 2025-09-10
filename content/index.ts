@@ -194,7 +194,7 @@ export const PROJECTS_CONTENT = {
       title: 'Smart Closet',
       description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.OPENAI, TECHNOLOGIES.GEMINI, TECHNOLOGIES.AWS, TECHNOLOGIES.AI_ML],
-      image: '/smart-closet/SmartCloset1.jpg',
+      image: '/projects/SmartCloset1.jpg',
       link: '',
       github: 'https://github.com/annabel-goldman/smart-closet-submission',
       demo: ''
@@ -204,7 +204,7 @@ export const PROJECTS_CONTENT = {
       title: 'Family Cookbook',
       description: 'A digital cookbook of family recipes I collected, formatted, and put on a website to share with my family.',
       technologies: [TECHNOLOGIES.HTML, TECHNOLOGIES.CSS, TECHNOLOGIES.JAVASCRIPT],
-      image: '/family-cookbook/Cookbook1.jpg',
+      image: '/projects/Cookbook1.jpg',
       link: 'http://goldmanfamilycookbook.com/',
       github: '',
       demo: 'http://goldmanfamilycookbook.com/'
@@ -213,8 +213,8 @@ export const PROJECTS_CONTENT = {
       id: 4,
       title: 'Fairytales 4 Kids',
       description: 'Simple HTML site with ChatGPT-4 generated stories and DALL·E-generated content. Made for kids who want to hear a story but don\'t have a book nearby.',
-      technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.GPT4, TECHNOLOGIES.DALLE, TECHNOLOGIES.AI_GENERATED],
-      image: '/fairytales4kids/Fairytales1.jpg',
+      technologies: [TECHNOLOGIES.REACT],
+      image: '/projects/Fairytales1.jpg',
       link: 'https://fairytales4kids.com/',
       github: 'https://github.com/annabel-goldman/fairytales4kids',
       demo: 'https://fairytales4kids.com/'
@@ -224,7 +224,7 @@ export const PROJECTS_CONTENT = {
       title: 'Start Small: Master CS Algorithms',
       description: 'Website I designed and built for a CS students taking a CS algorithms course.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.TYPESCRIPT],
-      image: '/start-small/start-small.jpeg',
+      image: '/projects/start-small.jpeg',
       link: 'https://annabel-goldman.github.io/cs-algorithms/',
       github: 'https://github.com/annabel-goldman/cs-algorithms',
       demo: 'https://annabel-goldman.github.io/cs-algorithms/'
@@ -234,7 +234,7 @@ export const PROJECTS_CONTENT = {
       title: 'Visual Art Gallery',
       description: 'A curated showcase of my visual art and design work, featuring digital illustrations, traditional media, and experimental pieces.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS, TECHNOLOGIES.DESIGN],
-      image: '/visual-art/visual-art-gallery.png',
+      image: '/projects/visual-art-gallery.png',
       link: 'https://annabel-goldman.github.io/visual-art/',
       github: 'https://github.com/annabel-goldman/visual-art',
       demo: 'https://annabel-goldman.github.io/visual-art/'
@@ -243,8 +243,8 @@ export const PROJECTS_CONTENT = {
       id: 7,
       title: 'Chic Shit',
       description: 'My fashion blog. Filled with my opinions on fashion and photos to go along with them. Made for fun in my free time.',
-      technologies: [TECHNOLOGIES.JAVASCRIPT, TECHNOLOGIES.HTML, TECHNOLOGIES.CSS, TECHNOLOGIES.WEBP_OPTIMIZATION],
-      image: '/chic-shit-blog/chic-shit-blog.jpg',
+      technologies: [TECHNOLOGIES.JAVASCRIPT, TECHNOLOGIES.HTML, TECHNOLOGIES.CSS],
+      image: '/projects/chic-shit-blog.jpg',
       link: 'https://annabel-goldman.github.io/chic-shit-blog/',
       github: 'https://github.com/annabel-goldman/chic-shit-blog',
       demo: 'https://annabel-goldman.github.io/chic-shit-blog/'
