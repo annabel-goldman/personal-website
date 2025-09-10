@@ -193,7 +193,7 @@ export const PROJECTS_CONTENT = {
       id: 1,
       title: 'Smart Closet',
       description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
-      technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.OPENAI, TECHNOLOGIES.GEMINI, TECHNOLOGIES.AWS, TECHNOLOGIES.AI_ML],
+      technologies: [TECHNOLOGIES.AWS, TECHNOLOGIES.OPENAI, TECHNOLOGIES.GEMINI],
       image: '/projects/SmartCloset1.jpg',
       link: '',
       github: 'https://github.com/annabel-goldman/smart-closet-submission',

@@ -36,7 +36,7 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className={`group relative flex flex-col justify-center items-start p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden
+                className={`group relative flex flex-col justify-start items-start p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 border-r border-cream-50 transition-all duration-300 ease-in-out hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20 cursor-pointer overflow-hidden
                   ${!isLastRowMobile ? 'border-b' : ''} 
                   ${!isLastRowTablet ? 'md:border-b' : 'md:border-b-0'} 
                   ${!isLastRowDesktop ? 'lg:border-b' : 'lg:border-b-0'}`}
@@ -55,7 +55,7 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10">
+                <div className="relative z-10 mt-4 sm:mt-6 md:mt-8 lg:mt-10">
                   <h3 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl font-bold text-white mb-1.5 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 font-serif">
                     {project.title}
                   </h3>
