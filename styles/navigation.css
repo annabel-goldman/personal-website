@@ -1,0 +1,14 @@
+/**
+ * Navigation Component Styles
+ */
+
+/* Navigation left section - 60% width to match hero text content */
+.nav-left-section {
+  width: 60%;
+}
+
+/* Navigation right section - 40% width to align with carousel */
+.nav-right-section {
+  width: 40%;
+}
+

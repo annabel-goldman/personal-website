@@ -1,7 +1,7 @@
 import React from 'react'
 import ResearchCard from '@/components/ui/ResearchCard'
 import { researchProjects } from '@/data/research'
-import { PAGE_CONTENT } from '@/content'
+import { PAGE_CONTENT } from '@/content/site-content'
 
 /**
  * Research Component

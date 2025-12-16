@@ -1,0 +1,32 @@
+/**
+ * Hero Component Styles
+ */
+
+/* Hero section responsive layout */
+.hero-section {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Hero text content area - 60% width on desktop */
+.hero-text-content {
+  width: 60%;
+}
+
+/* Hero carousel area - 40% width on desktop */
+.hero-carousel {
+  width: 40%;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-text-content {
+    width: 100% !important;
+  }
+  
+  .hero-section {
+    display: block !important;
+  }
+}
+

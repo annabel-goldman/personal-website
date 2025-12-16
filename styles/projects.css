@@ -1,0 +1,10 @@
+/**
+ * Projects Component Styles
+ */
+
+/* Project card height - half viewport minus header and footer */
+.project-card {
+  height: calc((100vh - 128px) / 2);
+  border-radius: 0;
+}
+

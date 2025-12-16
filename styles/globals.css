@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import component-specific styles */
+@import './scrollbar.css';
+@import './cursor.css';
+@import './hero.css';
+@import './navigation.css';
+@import './projects.css';
+
+:root {
+  --font-primary: 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: theme('colors.navy.900');
+  background-color: theme('colors.cream.50');
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base layer for font - using Tailwind's layer system for proper specificity */
+@layer base {
+  * {
+    font-family: var(--font-primary);
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    font-family: var(--font-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label {
+    font-family: var(--font-primary);
+  }
+}
+
+/* Custom animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid theme('colors.navy.800');
+  outline-offset: 2px;
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(55, 48, 163, 0.3);
+}

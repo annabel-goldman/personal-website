@@ -1,0 +1,37 @@
+/**
+ * Custom Scrollbar Styles
+ * Subtle but visible scrollbar for accessibility
+ * Users should always be able to see if content is scrollable
+ */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.navy.300');
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.navy.500');
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.navy.300') transparent;
+}
+
+/* Make scrollbar more prominent when actively scrolling or hovering */
+html:hover::-webkit-scrollbar-thumb,
+body:hover::-webkit-scrollbar-thumb {
+  background: theme('colors.navy.400');
+}

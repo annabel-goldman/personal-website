@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Footer from '@/components/Footer'
-import { ASSETS } from '@/constants'
-import { PAGE_CONTENT, UI_LABELS } from '@/content'
-import { downloadFile } from '@/utils'
+import { ASSETS } from '@/constants/config'
+import { PAGE_CONTENT } from '@/content/site-content'
+import { downloadFile } from '@/utils/helpers'
+import { DownloadIcon } from '@/components/ui/Icons'
 
 /**
  * Resume Page Component
@@ -19,51 +21,41 @@ export default function Resume() {
   }
 
   return (
-    <main className="min-h-screen">
-      <div className="relative w-full h-screen flex items-center justify-center pt-16">
-        {/* Resume Image */}
-        <div className="w-full h-full flex items-center justify-center">
-          <div 
-            className="shadow-2xl overflow-hidden relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <img
-              src={ASSETS.RESUME_IMAGE}
-              alt={PAGE_CONTENT.RESUME.ALT_TEXT}
-              className="w-full h-full object-contain"
-              style={{ maxHeight: 'calc(100vh - 4rem)' }}
-            />
+    <main className="min-h-screen bg-cream-50">
+      <div className="w-full min-h-screen flex items-center justify-center pt-20 pb-8 px-4">
+        {/* Resume Container - sized to match letter paper aspect ratio (8.5:11) */}
+        <div 
+          className="relative shadow-2xl bg-white"
+          style={{ 
+            width: 'min(90vw, 650px)',
+            aspectRatio: '8.5 / 11'
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <Image
+            src={ASSETS.RESUME_IMAGE}
+            alt={PAGE_CONTENT.RESUME.ALT_TEXT}
+            fill
+            className="object-contain"
+            priority
+          />
 
-            {/* Download Button Overlay */}
-            {isHovered && (
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300">
-                <button
-                  onClick={handleDownload}
-                  className="bg-navy-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-700 transition-colors duration-200 flex items-center space-x-2 shadow-lg"
-                >
-                  <svg 
-                    className="w-5 h-5" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-                    />
-                  </svg>
-                  <span>{PAGE_CONTENT.RESUME.DOWNLOAD_BUTTON}</span>
-                </button>
-              </div>
-            )}
-          </div>
+          {/* Download Button Overlay */}
+          {isHovered && (
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300">
+              <button
+                onClick={handleDownload}
+                className="bg-navy-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-700 transition-colors duration-200 flex items-center space-x-2 shadow-lg"
+              >
+                <DownloadIcon className="w-5 h-5" />
+                <span>{PAGE_CONTENT.RESUME.DOWNLOAD_BUTTON}</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      <div className="w-full h-px bg-cream-50" />
       <Footer />
     </main>
   )
-} 
+}

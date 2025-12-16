@@ -1,5 +1,5 @@
 import React from 'react'
-import { PERSONAL_INFO, UI_LABELS } from '@/content'
+import { PERSONAL_INFO, UI_LABELS } from '@/content/site-content'
 
 /**
  * Footer Component

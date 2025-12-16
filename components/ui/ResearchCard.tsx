@@ -1,5 +1,6 @@
 import React from 'react'
-import { ResearchProject } from '@/types'
+import Image from 'next/image'
+import { ResearchProject } from '@/types/types'
 
 interface ResearchCardProps {
   project: ResearchProject;
@@ -12,7 +13,7 @@ interface ResearchCardProps {
  * @param project - Research project data to display
  */
 const ResearchCard: React.FC<ResearchCardProps> = ({ project }) => {
-  const { title, description, organization, period, image, link, category } = project
+  const { title, description, period, image, link, category } = project
 
   return (
     <a 
@@ -25,11 +26,12 @@ const ResearchCard: React.FC<ResearchCardProps> = ({ project }) => {
         {/* Image Section */}
         <div className="md:col-span-1">
           <div className="bg-cream-100 p-6 border border-navy-200">
-            <div className="flex items-center justify-center h-32">
-              <img 
+            <div className="relative flex items-center justify-center h-32">
+              <Image 
                 src={image} 
                 alt={title}
-                className="max-h-full max-w-full object-contain"
+                fill
+                className="object-contain"
               />
             </div>
           </div>

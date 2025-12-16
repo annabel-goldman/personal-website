@@ -1,0 +1,26 @@
+/**
+ * Custom Cursor Styles
+ * Hides default cursor when custom cursor is enabled
+ * Uses high specificity via .custom-cursor-enabled class instead of !important
+ */
+
+/* Hide default cursor only when custom cursor is enabled */
+.custom-cursor-enabled {
+  cursor: none;
+}
+
+.custom-cursor-enabled * {
+  cursor: none;
+}
+
+/* Ensure interactive elements also hide cursor when custom cursor is active */
+.custom-cursor-enabled a,
+.custom-cursor-enabled button,
+.custom-cursor-enabled [role="button"],
+.custom-cursor-enabled input,
+.custom-cursor-enabled textarea,
+.custom-cursor-enabled select,
+.custom-cursor-enabled label[for],
+.custom-cursor-enabled .cursor-pointer {
+  cursor: none;
+}

@@ -48,5 +48,5 @@ export const UI = {
   CURSOR_Z_INDEX: 99999
 } as const;
 
-// Note: Personal information and navigation items moved to /content/index.ts
-// Import them from there: import { PERSONAL_INFO, NAVIGATION } from '@/content' 
+// Note: Personal information and navigation items are in /content/site-content.ts
+// Import them from there: import { PERSONAL_INFO, NAVIGATION } from '@/content/site-content' 

@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import { ASSETS, ANIMATION } from '@/constants'
-import { handleImageError, handleImageLoad } from '@/utils'
+import Image from 'next/image'
+import { ASSETS, ANIMATION } from '@/constants/config'
+import { ChevronLeftIcon, ChevronRightIcon } from '@/components/ui/Icons'
 
 /**
  * Carousel Component
@@ -14,7 +14,6 @@ const images = ASSETS.CAROUSEL_IMAGES
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const pathname = usePathname()
   
   // Auto-advance carousel every 5 seconds
   useEffect(() => {
@@ -42,15 +41,15 @@ export default function Carousel() {
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image}
             alt={`Annabel Marie Goldman ${index + 1}`}
-            className={`absolute w-full h-full object-cover object-center transition-opacity duration-1000 ${
+            fill
+            className={`object-cover object-center transition-opacity duration-1000 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
-            onError={(e) => handleImageError(image, e.currentTarget)}
-            onLoad={() => handleImageLoad(image)}
+            priority={index === 0}
           />
         ))}
       </div>
@@ -61,9 +60,7 @@ export default function Carousel() {
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10 opacity-0 group-hover:opacity-100"
         aria-label="Previous image"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
+        <ChevronLeftIcon className="w-6 h-6" />
       </button>
 
       <button
@@ -71,9 +68,7 @@ export default function Carousel() {
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10 opacity-0 group-hover:opacity-100"
         aria-label="Next image"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <ChevronRightIcon className="w-6 h-6" />
       </button>
 
       {/* Dots Indicator */}

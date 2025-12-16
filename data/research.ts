@@ -1,4 +1,4 @@
-import { ResearchProject } from '@/types';
+import { ResearchProject } from '@/types/types';
 
 /**
  * Research projects data

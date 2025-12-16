@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-import { ASSETS, UI, ANIMATION } from '@/constants'
-import { CustomCursorProps } from '@/types'
+import { ASSETS, UI, ANIMATION } from '@/constants/config'
+import { CustomCursorProps } from '@/types/types'
 
 /**
  * CustomCursor Component

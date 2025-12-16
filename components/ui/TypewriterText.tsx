@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { TypewriterTextProps } from '@/types'
+import React, { useState, useEffect, useRef } from 'react'
+import { TypewriterTextProps } from '@/types/types'
 
 /**
  * TypewriterText Component
@@ -19,24 +19,35 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   speed = 80 
 }) => {
   const [displayText, setDisplayText] = useState('')
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
+    let currentIndex = 0
+    
     const startTyping = () => {
-      let currentIndex = 0
-      const timer = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         if (currentIndex <= text.length) {
           setDisplayText(text.slice(0, currentIndex))
           currentIndex++
         } else {
-          clearInterval(timer)
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current)
+            intervalRef.current = null
+          }
         }
       }, speed)
-
-      return () => clearInterval(timer)
     }
 
     const delayTimer = setTimeout(startTyping, delay)
-    return () => clearTimeout(delayTimer)
+    
+    // Cleanup: clear both the delay timeout and the typing interval
+    return () => {
+      clearTimeout(delayTimer)
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+    }
   }, [text, delay, speed])
 
   return (

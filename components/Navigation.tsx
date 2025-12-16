@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { NavigationProps } from '@/types'
-import { NAVIGATION, PERSONAL_INFO, ACCESSIBILITY } from '@/content'
-import { ANIMATION } from '@/constants'
-import { isActivePath } from '@/utils'
+import { NavigationProps } from '@/types/types'
+import { NAVIGATION, PERSONAL_INFO, ACCESSIBILITY } from '@/content/site-content'
+import { ANIMATION } from '@/constants/config'
+import { isActivePath } from '@/utils/helpers'
+import { MenuIcon } from '@/components/ui/Icons'
 
 /**
  * Navigation Component
  * Responsive navigation bar with cursor toggle functionality
  */
-
 export default function Navigation({ cursorEnabled, onCursorToggle }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -43,7 +43,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center h-16 w-full">
         {/* Left section: Only title - 60% width to match text content */}
-        <div className="flex items-center pl-16" style={{ width: '60%' }}>
+        <div className="nav-left-section flex items-center pl-16">
           {/* Title/Logo on far left */}
           <div className="text-xl font-bold text-navy-800">
             {PERSONAL_INFO.BRAND_NAME}
@@ -51,7 +51,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         </div>
         
         {/* Right section: All nav buttons evenly spaced above carousel - 40% width */}
-        <div className="flex items-center justify-evenly" style={{ width: '40%' }}>
+        <div className="nav-right-section flex items-center justify-evenly">
           <Link
             href="/"
             className={`font-medium px-2 py-1 transition-colors ${
@@ -60,7 +60,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
                 : 'text-navy-800/70 hover:text-navy-800'
             }`}
           >
-{NAVIGATION.ITEMS[0].label}
+            {NAVIGATION.ITEMS[0].label}
           </Link>
           {NAVIGATION.ITEMS.filter(item => item.href !== '/').map((item) => (
             <Link
@@ -104,9 +104,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
               className="text-navy-800 hover:text-navy-800 transition-colors duration-200"
               aria-label={ACCESSIBILITY.TOGGLE_MOBILE_MENU}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <MenuIcon className="w-6 h-6" />
             </button>
           </div>
         </div>
@@ -149,4 +147,4 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
       </div>
     </nav>
   )
-} 
+}

@@ -16,18 +16,8 @@ export const useCursor = (initialState: boolean = true) => {
     setCursorEnabled(prev => !prev)
   }, [])
 
-  const enableCursor = useCallback(() => {
-    setCursorEnabled(true)
-  }, [])
-
-  const disableCursor = useCallback(() => {
-    setCursorEnabled(false)
-  }, [])
-
   return {
     cursorEnabled,
-    toggleCursor,
-    enableCursor,
-    disableCursor
+    toggleCursor
   }
-} 
+}
