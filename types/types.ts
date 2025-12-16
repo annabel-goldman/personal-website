@@ -12,7 +12,6 @@ export interface GridItem {
   technologies?: readonly string[];
   link?: string;
   github?: string;
-  demo?: string;
 }
 
 // Navigation-related types

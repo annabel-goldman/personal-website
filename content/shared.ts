@@ -14,10 +14,9 @@ export const SITE_INFO = {
 
 // UI Labels used in multiple places
 export const UI_LABELS = {
-  // Project/Item modal buttons
+  // Project/Item buttons
   VIEW_PROJECT: 'View Project',
   GITHUB: 'GitHub',
-  DEMO: 'Demo',
   
   // Project/Item modal headings
   TECHNOLOGIES_USED: 'Technologies Used',
