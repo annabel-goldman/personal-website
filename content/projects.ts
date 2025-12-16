@@ -93,11 +93,11 @@ export const PROJECTS_CONTENT = {
     },
     {
       id: 4,
-      title: 'Visual Art Gallery',
-      description: 'A website to hold all of the art work I made in high school. Hopefully I will be able to add to the collection when I have more free time!',
+      title: 'MistakenTales',
+      description: 'MistakenTales is an LLC I founded to design alternate reality games.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
-      image: '/projects/visual-art-gallery.png',
-      link: 'https://annabel-goldman.github.io/visual-art/',
+      image: '/projects/mistaken-tales.jpg',
+      link: 'https://mistakentales.com/',
       github: 'https://github.com/annabel-goldman/visual-art'
     },
     {
@@ -131,6 +131,16 @@ export const PROJECTS_CONTENT = {
       link: 'https://annabel-goldman.github.io/cs-algorithms/',
       github: 'https://github.com/annabel-goldman/cs-algorithms',
       demo: 'https://annabel-goldman.github.io/cs-algorithms/'
+    },
+
+    {
+      id: 4,
+      title: 'Visual Art Gallery',
+      description: 'A website to hold all of the art work I made in high school. Hopefully I will be able to add to the collection when I have more free time!',
+      technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
+      image: '/projects/visual-art-gallery.png',
+      link: 'https://annabel-goldman.github.io/visual-art/',
+      github: 'https://github.com/annabel-goldman/visual-art'
     },
 
 */
