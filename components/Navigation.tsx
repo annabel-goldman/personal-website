@@ -41,10 +41,10 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         ? 'bg-white/80 backdrop-blur-md shadow-lg border-navy-800/30' 
         : 'bg-white/60 backdrop-blur-sm border-navy-800/20'
     }`}>
-      {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center h-16 w-full">
-        {/* Left section: Only title - 60% width to match text content */}
-        <div className="nav-left-section flex items-center pl-16">
+      {/* Desktop Navigation - visible on tablet and up */}
+      <div className="hidden md:flex items-center h-16 w-full">
+        {/* Left section: Only title - matches hero text content width */}
+        <div className="nav-left-section flex items-center pl-12 lg:pl-16">
           {/* Title/Logo on far left */}
           <div className="text-xl font-bold text-navy-800">
             {NAVIGATION.BRAND_NAME}
@@ -91,15 +91,15 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         </div>
       </div>
 
-      {/* Mobile/Tablet Navigation */}
-      <div className="lg:hidden max-w-6xl mx-auto px-4">
+      {/* Mobile Navigation - visible only on small screens */}
+      <div className="md:hidden max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-navy-800 hover:text-navy-800 transition-colors">
               {NAVIGATION.BRAND_NAME}
             </Link>
           </div>
-          <div className="lg:hidden">
+          <div>
             <button 
               onClick={toggleMobileMenu}
               className="text-navy-800 hover:text-navy-800 transition-colors duration-200"
@@ -112,7 +112,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-navy-800/20 bg-white/95 backdrop-blur-md">
+          <div className="border-t border-navy-800/20 bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {NAVIGATION.ITEMS.map((item) => (
                 <Link

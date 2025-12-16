@@ -1,13 +1,59 @@
 /* Resume page styles */
 
 .resume-section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .resume-container {
-  height: calc(100vh - 7rem);
+  min-height: calc(100vh - 10rem);
 }
 
 .resume-page {
   aspect-ratio: 8.5 / 11;
+}
+
+/* Mobile: Full width stacked pages */
+@media (max-width: 767px) {
+  .resume-container {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  
+  .resume-page {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 500px;
+  }
+}
+
+/* Tablet: Larger stacked pages */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .resume-container {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  
+  .resume-page {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    min-height: 700px;
+  }
+}
+
+/* Small desktop: Side by side but constrained */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .resume-page {
+    height: calc(100vh - 10rem);
+    max-height: 700px;
+  }
+}
+
+/* Large desktop: Full side-by-side */
+@media (min-width: 1280px) {
+  .resume-page {
+    height: calc(100vh - 10rem);
+    max-height: 850px;
+  }
 }

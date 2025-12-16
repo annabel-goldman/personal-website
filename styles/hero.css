@@ -9,24 +9,50 @@
   padding-right: 0;
 }
 
-/* Hero text content area - 60% width on desktop */
+/* Hero text content area - 60% width on large desktop */
 .hero-text-content {
   width: 60%;
 }
 
-/* Hero carousel area - 40% width on desktop */
+/* Hero carousel area - 40% width on large desktop */
 .hero-carousel {
   width: 40%;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 1024px) {
+/* Mobile: Full width text, no carousel */
+@media (max-width: 767px) {
   .hero-text-content {
     width: 100% !important;
   }
   
   .hero-section {
     display: block !important;
+  }
+  
+  .hero-carousel {
+    display: none !important;
+  }
+}
+
+/* Tablet: 55/45 split to give carousel more room */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-text-content {
+    width: 55%;
+  }
+  
+  .hero-carousel {
+    width: 45%;
+  }
+}
+
+/* Small desktop: 60/40 split */
+@media (min-width: 1024px) {
+  .hero-text-content {
+    width: 60%;
+  }
+  
+  .hero-carousel {
+    width: 40%;
   }
 }
 

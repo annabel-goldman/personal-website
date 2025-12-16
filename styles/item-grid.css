@@ -2,9 +2,42 @@
  * Item Grid Component Styles
  */
 
-/* Grid item card height - half viewport minus header and footer */
+/* Grid item card - responsive heights for different screen sizes */
 .project-card {
-  height: calc((100vh - 128px) / 2);
   border-radius: 0;
+  min-height: 280px;
+}
+
+/* Mobile: Fixed comfortable height */
+@media (max-width: 767px) {
+  .project-card {
+    min-height: 260px;
+    height: auto;
+  }
+}
+
+/* Tablet: Slightly taller for 2-column layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-card {
+    min-height: 300px;
+    height: calc((100vh - 128px) / 3);
+    max-height: 350px;
+  }
+}
+
+/* Desktop: Original viewport-based with constraints */
+@media (min-width: 1024px) {
+  .project-card {
+    min-height: 280px;
+    height: calc((100vh - 128px) / 2);
+    max-height: 450px;
+  }
+}
+
+/* Large desktop: Allow more room */
+@media (min-width: 1440px) {
+  .project-card {
+    max-height: 500px;
+  }
 }
 

@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section className="hero-section h-screen pt-16 bg-cream-50 relative overflow-hidden w-full flex">
       {/* Left: Text Content */}
-      <div className="hero-text-content flex flex-col justify-center h-full px-6 sm:px-8 lg:pl-16 lg:pr-8 relative z-10 text-center lg:text-left">
+      <div className="hero-text-content flex flex-col justify-center h-full px-6 sm:px-8 md:pl-12 md:pr-6 lg:pl-16 lg:pr-8 relative z-10 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight">
           {isLoaded ? (
             <TypewriterText 
@@ -45,7 +45,7 @@ export default function Hero() {
         <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl leading-relaxed">
           {HOME_CONTENT.DESCRIPTION}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center lg:items-start text-navy-800/70">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start text-navy-800/70">
           <a href={`mailto:${LINKS.EMAIL}`} className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
             <EmailIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             {HOME_CONTENT.BUTTONS.CONTACT_ME}
@@ -64,8 +64,8 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* Right: Carousel */}
-      <div className="hero-carousel hidden lg:block h-full">
+      {/* Right: Carousel - visible on tablet and up */}
+      <div className="hero-carousel hidden md:block h-full">
         <Carousel />
       </div>
     </section>

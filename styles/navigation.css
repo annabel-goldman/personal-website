@@ -2,13 +2,36 @@
  * Navigation Component Styles
  */
 
-/* Navigation left section - 60% width to match hero text content */
+/* Navigation left section - matches hero text content width */
 .nav-left-section {
   width: 60%;
 }
 
-/* Navigation right section - 40% width to align with carousel */
+/* Navigation right section - matches carousel width */
 .nav-right-section {
   width: 40%;
+}
+
+/* Tablet: Match hero 55/45 split */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-left-section {
+    width: 55%;
+    padding-left: 3rem;
+  }
+  
+  .nav-right-section {
+    width: 45%;
+  }
+}
+
+/* Desktop: 60/40 split */
+@media (min-width: 1024px) {
+  .nav-left-section {
+    width: 60%;
+  }
+  
+  .nav-right-section {
+    width: 40%;
+  }
 }
 

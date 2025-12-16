@@ -108,7 +108,7 @@ const ItemDetailModal: React.FC<ItemDetailModalProps> = ({ item, onClose }) => {
 
             {/* Right column - Image (only if present) */}
             {item.image && (
-              <div className="bg-cream-100 p-4 border border-navy-200 relative min-h-[300px]">
+              <div className="bg-cream-100 p-4 border border-navy-200 relative min-h-[200px] sm:min-h-[250px] lg:min-h-[300px]">
                 <Image 
                   src={item.image} 
                   alt={item.title}
