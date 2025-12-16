@@ -1,0 +1,13 @@
+/* Resume page styles */
+
+.resume-section {
+  height: 100vh;
+}
+
+.resume-container {
+  height: calc(100vh - 7rem);
+}
+
+.resume-page {
+  aspect-ratio: 8.5 / 11;
+}

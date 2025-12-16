@@ -7,8 +7,11 @@
 export const ASSETS = {
   CURSOR_IMAGE: '/cursor-icon.png',
   STAR_IMAGE: '/cursor-icon.png',
-  RESUME_PDF: '/resume/Annabel_Goldman_Resume.pdf',
-  RESUME_IMAGE: '/resume/Annabel_Goldman_Resume.png',
+  RESUME_PDF: '/resume/resume.pdf',
+  RESUME_PAGES: [
+    '/resume/resume-page-1.jpg',
+    '/resume/resume-page-2.jpg',
+  ],
   CAROUSEL_IMAGES: [
     '/home-carousel/1.jpg',
     '/home-carousel/2.jpeg',

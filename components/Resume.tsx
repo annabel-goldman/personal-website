@@ -10,6 +10,7 @@ import { DownloadIcon } from '@/components/ui/Icons'
 /**
  * Resume Component
  * Interactive resume viewer with download functionality
+ * Displays multi-page resume as a continuous scrollable document
  */
 export default function Resume() {
   const [isHovered, setIsHovered] = useState(false)
@@ -19,24 +20,28 @@ export default function Resume() {
   }
 
   return (
-    <section className="w-full min-h-screen flex items-center justify-center pt-20 pb-8 px-4 bg-cream-50">
-      {/* Resume Container - sized to match letter paper aspect ratio (8.5:11) */}
+    <section className="resume-section w-full flex items-center justify-center pt-20 pb-8 px-4 bg-cream-50">
+      {/* Resume Container - pages side by side, height fills viewport minus header/footer */}
       <div 
-        className="relative shadow-2xl bg-white"
-        style={{ 
-          width: 'min(90vw, 650px)',
-          aspectRatio: '8.5 / 11'
-        }}
+        className="resume-container relative flex gap-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Image
-          src={ASSETS.RESUME_IMAGE}
-          alt={RESUME_CONTENT.ALT_TEXT}
-          fill
-          className="object-contain"
-          priority
-        />
+        {/* Resume Pages */}
+        {ASSETS.RESUME_PAGES.map((pageSrc, index) => (
+          <div 
+            key={index}
+            className="resume-page relative h-full shadow-2xl bg-white"
+          >
+            <Image
+              src={pageSrc}
+              alt={`${RESUME_CONTENT.ALT_TEXT} - Page ${index + 1}`}
+              fill
+              className="object-contain"
+              priority={index === 0}
+            />
+          </div>
+        ))}
 
         {/* Download Button Overlay */}
         {isHovered && (

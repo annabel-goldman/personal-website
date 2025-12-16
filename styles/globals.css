@@ -8,6 +8,7 @@
 @import './hero.css';
 @import './navigation.css';
 @import './item-grid.css';
+@import './resume.css';
 
 :root {
   --font-primary: 'Times New Roman', Times, serif;
