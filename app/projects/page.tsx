@@ -1,15 +1,16 @@
 import React from 'react'
-import Projects from '@/components/Projects'
+import ItemGrid from '@/components/ItemGrid'
 import Footer from '@/components/Footer'
+import { PROJECTS_CONTENT } from '@/content/projects'
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen">
       <section className="pt-16">
-        <Projects />
+        <ItemGrid items={PROJECTS_CONTENT.PROJECTS} sectionId="projects" />
       </section>
       <div className="w-full h-px bg-white" />
       <Footer />
     </main>
   )
-} 
+}

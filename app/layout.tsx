@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Annabel Goldman',
   description: 'Software Engineer & Developer Portfolio',
   icons: {
-    icon: '/image.png',
+    icon: '/cursor-icon.png',
   },
 }
 

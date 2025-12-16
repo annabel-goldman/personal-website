@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { NavigationProps } from '@/types/types'
-import { NAVIGATION, PERSONAL_INFO, ACCESSIBILITY } from '@/content/site-content'
+import { NAVIGATION } from '@/content/navigation'
+import { ACCESSIBILITY } from '@/content/shared'
 import { ANIMATION } from '@/constants/config'
 import { isActivePath } from '@/utils/helpers'
 import { MenuIcon } from '@/components/ui/Icons'
@@ -46,7 +47,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         <div className="nav-left-section flex items-center pl-16">
           {/* Title/Logo on far left */}
           <div className="text-xl font-bold text-navy-800">
-            {PERSONAL_INFO.BRAND_NAME}
+            {NAVIGATION.BRAND_NAME}
           </div>
         </div>
         
@@ -95,7 +96,7 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-navy-800 hover:text-navy-800 transition-colors">
-              {PERSONAL_INFO.BRAND_NAME}
+              {NAVIGATION.BRAND_NAME}
             </Link>
           </div>
           <div className="lg:hidden">

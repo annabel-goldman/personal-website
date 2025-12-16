@@ -5,15 +5,14 @@
 
 // Asset paths
 export const ASSETS = {
-  CURSOR_IMAGE: '/image.png',
-  STAR_IMAGE: '/image.png',
-  LOGO_PINK: '/logo-pink.png',
+  CURSOR_IMAGE: '/cursor-icon.png',
+  STAR_IMAGE: '/cursor-icon.png',
   RESUME_PDF: '/resume/Annabel_Goldman_Resume.pdf',
   RESUME_IMAGE: '/resume/Annabel_Goldman_Resume.png',
   CAROUSEL_IMAGES: [
-    '/home-carosel/1.jpg',
-    '/home-carosel/2.jpeg',
-    '/home-carosel/3.jpg',
+    '/home-carousel/1.jpg',
+    '/home-carousel/2.jpeg',
+    '/home-carousel/3.jpg',
   ]
 } as const;
 
@@ -48,5 +47,9 @@ export const UI = {
   CURSOR_Z_INDEX: 99999
 } as const;
 
-// Note: Personal information and navigation items are in /content/site-content.ts
-// Import them from there: import { PERSONAL_INFO, NAVIGATION } from '@/content/site-content' 
+// Note: Content is organized by page in the /content folder:
+// - home.ts: Home page content
+// - projects.ts: Projects data
+// - resume.ts: Resume page content
+// - navigation.ts: Navigation menu items
+// - shared.ts: Shared UI labels and accessibility text 

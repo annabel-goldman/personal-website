@@ -1,0 +1,219 @@
+# Portfolio Project Rules & Best Practices
+
+This document outlines the organizational patterns and best practices for this Next.js portfolio project.
+
+---
+
+## Project Structure Overview
+
+```
+app/                    # Pages (routing)
+components/             # React components
+  ui/                   # Reusable UI primitives
+content/                # User-facing text content
+constants/              # Technical configuration
+hooks/                  # Custom React hooks
+types/                  # TypeScript interfaces
+styles/                 # CSS files
+public/                 # Static assets
+utils/                  # Helper functions
+```
+
+---
+
+## Component Organization
+
+### `components/` (Root Level)
+Major page sections and site-wide features:
+- Hero, Footer, Navigation, Resume
+- Components rendered directly in pages
+- "Assembled" parts composed from smaller pieces
+
+### `components/ui/`
+Small, reusable building blocks:
+- Icons, Modals, TypewriterText
+- Used *inside* other components
+- Generic/atomic components that could be reused anywhere
+
+**Rule**: If it's a standalone page section → `components/`. If it's a reusable primitive → `components/ui/`.
+
+---
+
+## Content vs Constants
+
+### `content/` — User-Facing Text
+Organized by page for easy editing:
+- `home.ts` — Hero section content (name, title, bio)
+- `projects.ts` — Project data and technologies
+- `resume.ts` — Resume page labels
+- `navigation.ts` — Menu items and nav labels
+- `shared.ts` — Labels used across multiple pages
+
+**When to add here**: Text that users see, content that non-developers might edit.
+
+### `constants/config.ts` — Technical Configuration
+- Asset paths (images, PDFs)
+- Animation timing and speeds
+- External URLs (GitHub, LinkedIn, email)
+- UI dimensions (sizes, z-indexes)
+
+**When to add here**: Numbers, paths, URLs — things that affect *how* the site works, not *what* it says.
+
+---
+
+## Page Structure (App Router)
+
+Pages should be thin — they compose components, not contain logic:
+
+```tsx
+// ✅ Good: Thin page file
+import ItemGrid from '@/components/ItemGrid'
+import Footer from '@/components/Footer'
+import { PROJECTS_CONTENT } from '@/content/projects'
+
+export default function ProjectsPage() {
+  return (
+    <main className="min-h-screen">
+      <ItemGrid items={PROJECTS_CONTENT.PROJECTS} sectionId="projects" />
+      <Footer />
+    </main>
+  )
+}
+```
+
+```tsx
+// ❌ Bad: Logic in page file
+export default function ProjectsPage() {
+  const [state, setState] = useState(...)
+  // ... lots of JSX and logic
+}
+```
+
+---
+
+## Reusable Components
+
+When creating display components, make them accept data as props:
+
+```tsx
+// ✅ Reusable: Accepts items as prop
+interface ItemGridProps {
+  items: readonly GridItem[];
+  sectionId?: string;
+}
+
+export default function ItemGrid({ items, sectionId }: ItemGridProps) {
+  // ...
+}
+```
+
+```tsx
+// ❌ Not reusable: Imports data directly
+import { PROJECTS_CONTENT } from '@/content/projects'
+
+export default function ItemGrid() {
+  // Hardcoded to only work with projects
+}
+```
+
+---
+
+## Types
+
+### Generic Types
+Use generic types for reusable components:
+
+```typescript
+// types/types.ts
+export interface GridItem {
+  id: number;
+  title: string;
+  description: string;
+  image?: string;           // Optional fields for flexibility
+  technologies?: string[];
+  link?: string;
+}
+```
+
+---
+
+## Asset Naming Conventions
+
+### Images
+- Use **kebab-case**: `smart-closet.jpg`, `family-cookbook.jpg`
+- Organize in folders: `/projects/`, `/home-carousel/`, `/resume/`
+- Use descriptive names, not generic (`cursor-icon.png` not `image.png`)
+
+### Folder Structure
+```
+public/
+  cursor-icon.png           # Site-wide icon
+  home-carousel/            # Carousel images
+  projects/                 # Project thumbnails
+  resume/                   # Resume files
+```
+
+---
+
+## Code Hygiene
+
+### Remove Unused Code
+- Delete unused components, types, and exports
+- Remove unused assets from `public/`
+- Don't keep "just in case" code
+
+### Keep Imports Clean
+- Only import what you use
+- Use path aliases: `@/components/...`, `@/content/...`
+
+---
+
+## Adding New Pages
+
+To add a new page (e.g., "Research"):
+
+1. **Create content file**: `content/research.ts`
+   ```typescript
+   export const RESEARCH_CONTENT = {
+     ITEMS: [
+       { id: 1, title: '...', description: '...' }
+     ]
+   } as const;
+   ```
+
+2. **Create page**: `app/research/page.tsx`
+   ```tsx
+   import ItemGrid from '@/components/ItemGrid'
+   import { RESEARCH_CONTENT } from '@/content/research'
+   
+   export default function ResearchPage() {
+     return (
+       <main>
+         <ItemGrid items={RESEARCH_CONTENT.ITEMS} sectionId="research" />
+       </main>
+     )
+   }
+   ```
+
+3. **Add to navigation**: `content/navigation.ts`
+   ```typescript
+   ITEMS: [
+     { href: '/', label: 'Home' },
+     { href: '/projects', label: 'Projects' },
+     { href: '/research', label: 'Research' },  // Add here
+     { href: '/resume', label: 'Resume' }
+   ]
+   ```
+
+---
+
+## Summary
+
+| Need to... | Go to... |
+|------------|----------|
+| Change text users see | `content/` |
+| Change timing/sizes/paths | `constants/config.ts` |
+| Add a reusable UI piece | `components/ui/` |
+| Add a page section | `components/` |
+| Add a new page | `app/` + `content/` |
+| Add a shared type | `types/types.ts` |

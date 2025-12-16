@@ -3,28 +3,16 @@
  * Centralizes all interfaces and types for better maintainability
  */
 
-// Project-related types
-export interface Project {
+// Generic grid item type - used by ItemGrid and ItemDetailModal
+export interface GridItem {
   id: number;
   title: string;
   description: string;
-  technologies: readonly string[];
-  image: string;
-  link: string;
-  github: string;
-  demo: string;
-}
-
-// Research-related types
-export interface ResearchProject {
-  id: number;
-  title: string;
-  description: string;
-  organization: string;
-  period: string;
-  image: string;
-  link: string;
-  category: string;
+  image?: string;
+  technologies?: readonly string[];
+  link?: string;
+  github?: string;
+  demo?: string;
 }
 
 // Navigation-related types
@@ -48,14 +36,3 @@ export interface TypewriterTextProps {
   delay?: number;
   speed?: number;
 }
-
-// Layout types
-export interface LayoutProps {
-  children: React.ReactNode;
-}
-
-// Carousel types
-export interface CarouselImage {
-  src: string;
-  alt: string;
-} 

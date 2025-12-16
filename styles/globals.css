@@ -7,7 +7,7 @@
 @import './cursor.css';
 @import './hero.css';
 @import './navigation.css';
-@import './projects.css';
+@import './item-grid.css';
 
 :root {
   --font-primary: 'Times New Roman', Times, serif;
