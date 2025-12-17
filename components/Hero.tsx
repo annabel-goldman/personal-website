@@ -45,22 +45,22 @@ export default function Hero() {
         <p className="text-base sm:text-lg text-navy-800 mb-8 sm:mb-12 max-w-2xl leading-relaxed">
           {HOME_CONTENT.DESCRIPTION}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start text-navy-800/70">
-          <a href={`mailto:${LINKS.EMAIL}`} className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
-            <EmailIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-            {HOME_CONTENT.BUTTONS.CONTACT_ME}
+        <div className="flex flex-row gap-4 justify-center md:justify-start items-center text-navy-800/70 flex-nowrap">
+          <a href={`mailto:${LINKS.EMAIL}`} className="flex items-center gap-2 hover:text-navy-800 transition-colors whitespace-nowrap" aria-label={HOME_CONTENT.BUTTONS.CONTACT_ME}>
+            <EmailIcon className="w-5 h-5" />
+            <span className="hidden lg:inline">{HOME_CONTENT.BUTTONS.CONTACT_ME}</span>
           </a>
-          <a href={LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
-            <GitHubIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-            {HOME_CONTENT.BUTTONS.GITHUB}
+          <a href={LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors whitespace-nowrap" aria-label={HOME_CONTENT.BUTTONS.GITHUB}>
+            <GitHubIcon className="w-5 h-5" />
+            <span className="hidden lg:inline">{HOME_CONTENT.BUTTONS.GITHUB}</span>
           </a>
-          <a href={LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
-            <LinkedInIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-            {HOME_CONTENT.BUTTONS.LINKEDIN}
+          <a href={LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors whitespace-nowrap" aria-label={HOME_CONTENT.BUTTONS.LINKEDIN}>
+            <LinkedInIcon className="w-5 h-5" />
+            <span className="hidden lg:inline">{HOME_CONTENT.BUTTONS.LINKEDIN}</span>
           </a>
-          <a href={LINKS.CHILDHOOD_BLOG} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors text-sm sm:text-base">
-            <BookIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-            {HOME_CONTENT.BUTTONS.CHILDHOOD_BLOG}
+          <a href={LINKS.CHILDHOOD_BLOG} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-navy-800 transition-colors whitespace-nowrap" aria-label={HOME_CONTENT.BUTTONS.CHILDHOOD_BLOG}>
+            <BookIcon className="w-5 h-5" />
+            <span className="hidden lg:inline">{HOME_CONTENT.BUTTONS.CHILDHOOD_BLOG}</span>
           </a>
         </div>
       </div>
