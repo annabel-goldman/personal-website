@@ -8,6 +8,7 @@ import { UI_LABELS } from '@/content/shared'
 interface ItemGridProps {
   items: readonly GridItem[];
   sectionId?: string;
+  onItemClick?: (item: GridItem) => void;
 }
 
 /**
@@ -17,7 +18,7 @@ interface ItemGridProps {
  * Usage:
  * <ItemGrid items={PROJECTS_CONTENT.PROJECTS} sectionId="projects" />
  */
-export default function ItemGrid({ items, sectionId = 'items' }: ItemGridProps) {
+export default function ItemGrid({ items, sectionId = 'items', onItemClick }: ItemGridProps) {
   return (
     <section className="bg-navy-800" id={sectionId}>
       <div className="w-full">
@@ -34,7 +35,9 @@ export default function ItemGrid({ items, sectionId = 'items' }: ItemGridProps) 
                 className={`project-card group relative flex flex-col justify-between items-start p-4 sm:p-4 md:p-4 lg:p-6 xl:p-8 2xl:p-10 border-r border-cream-50 transition-all duration-300 ease-in-out overflow-hidden
                   ${!isLastRowMobile ? 'border-b' : ''} 
                   ${!isLastRowTablet ? 'md:border-b' : 'md:border-b-0'} 
-                  ${!isLastRowDesktop ? 'lg:border-b' : 'lg:border-b-0'}`}
+                  ${!isLastRowDesktop ? 'lg:border-b' : 'lg:border-b-0'}
+                  ${onItemClick ? 'cursor-pointer hover:bg-navy-700/50 hover:shadow-2xl hover:shadow-black/20' : ''}`}
+                onClick={onItemClick ? () => onItemClick(item) : undefined}
               >
                 {/* Background Image - shows on hover */}
                 {item.image && (
@@ -91,3 +94,4 @@ export default function ItemGrid({ items, sectionId = 'items' }: ItemGridProps) 
     </section>
   )
 }
+

@@ -3,7 +3,7 @@
 import React from 'react'
 import StarTrail from './StarTrail'
 import CustomCursor from './CustomCursor'
-import Navigation from './Navigation'
+import Navigation from '@/components/ui/Navigation'
 import { useCursor } from '@/hooks/useCursor'
 
 /**
@@ -27,6 +27,7 @@ export default function ClientLayout({
     </body>
   )
 }
+
 
 
 

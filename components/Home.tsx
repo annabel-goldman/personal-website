@@ -5,28 +5,28 @@ import TypewriterText from '@/components/ui/TypewriterText'
 import { EmailIcon, GitHubIcon, LinkedInIcon, BookIcon } from '@/components/ui/Icons'
 import { HOME_CONTENT } from '@/content/home'
 import { ANIMATION, LINKS } from '@/constants/config'
-import Carousel from './Carousel'
+import Carousel from '@/components/ui/Carousel'
 
 /**
- * Hero Component
+ * Home Component
  * Landing section with personal information and typewriter animation
  */
-export default function Hero() {
+export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     // Small delay to ensure smooth animation start
     const timer = setTimeout(() => {
       setIsLoaded(true)
-    }, ANIMATION.HERO_LOAD_DELAY)
+    }, ANIMATION.HOME_LOAD_DELAY)
 
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <section className="hero-section h-screen pt-16 bg-cream-50 relative overflow-hidden w-full flex">
+    <section className="home-section h-screen pt-16 bg-cream-50 relative overflow-hidden w-full flex">
       {/* Left: Text Content */}
-      <div className="hero-text-content flex flex-col justify-center h-full px-6 sm:px-8 md:pl-12 md:pr-6 lg:pl-16 lg:pr-8 relative z-10 text-center md:text-left">
+      <div className="home-text-content flex flex-col justify-center h-full px-6 sm:px-8 md:pl-12 md:pr-6 lg:pl-16 lg:pr-8 relative z-10 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-navy-800 mb-4 sm:mb-6 leading-tight">
           {isLoaded ? (
             <TypewriterText 
@@ -65,9 +65,10 @@ export default function Hero() {
         </div>
       </div>
       {/* Right: Carousel - visible on tablet and up */}
-      <div className="hero-carousel hidden md:block h-full">
+      <div className="home-carousel hidden md:block h-full">
         <Carousel />
       </div>
     </section>
   )
 }
+

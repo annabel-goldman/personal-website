@@ -149,3 +149,4 @@ export default function Navigation({ cursorEnabled, onCursorToggle }: Navigation
     </nav>
   )
 }
+

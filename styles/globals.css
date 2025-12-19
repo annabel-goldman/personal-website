@@ -5,7 +5,7 @@
 /* Import component-specific styles */
 @import './scrollbar.css';
 @import './cursor.css';
-@import './hero.css';
+@import './home.css';
 @import './navigation.css';
 @import './item-grid.css';
 @import './resume.css';

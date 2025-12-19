@@ -29,7 +29,7 @@ export default function Resume() {
   const showDownloadOverlay = isTouchDevice || isHovered
 
   return (
-    <section className="resume-section w-full flex flex-col items-center justify-start pt-20 pb-8 px-4 bg-cream-50">
+    <section className="resume-section w-full flex flex-col items-center justify-center pt-20 pb-8 px-4 bg-cream-50">
       {/* Resume Container - stacked on mobile/tablet, side-by-side on desktop */}
       <div 
         className="resume-container relative flex flex-col lg:flex-row items-center lg:items-start gap-6"

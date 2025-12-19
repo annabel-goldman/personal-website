@@ -5,8 +5,8 @@
 
 // Asset paths
 export const ASSETS = {
-  CURSOR_IMAGE: '/cursor-icon.png',
-  STAR_IMAGE: '/cursor-icon.png',
+  CURSOR_IMAGE: '/cursor.png',
+  STAR_IMAGE: '/cursor.png',
   RESUME_PDF: '/resume/resume.pdf',
   RESUME_PAGES: [
     '/resume/resume-page-1.jpg',
@@ -28,7 +28,7 @@ export const ANIMATION = {
   STAR_TRAIL_FADE_DELAY: 10,
   CURSOR_VISIBILITY_CHECK_INTERVAL: 100,
   SCROLL_THRESHOLD: 50,
-  HERO_LOAD_DELAY: 100
+  HOME_LOAD_DELAY: 100
 } as const;
 
 // External links

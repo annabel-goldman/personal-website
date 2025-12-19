@@ -1,57 +1,57 @@
 /**
- * Hero Component Styles
+ * Home Component Styles
  */
 
-/* Hero section responsive layout */
-.hero-section {
+/* Home section responsive layout */
+.home-section {
   margin: 0;
   padding-left: 0;
   padding-right: 0;
 }
 
-/* Hero text content area - 60% width on large desktop */
-.hero-text-content {
+/* Home text content area - 60% width on large desktop */
+.home-text-content {
   width: 60%;
 }
 
-/* Hero carousel area - 40% width on large desktop */
-.hero-carousel {
+/* Home carousel area - 40% width on large desktop */
+.home-carousel {
   width: 40%;
 }
 
 /* Mobile: Full width text, no carousel */
 @media (max-width: 767px) {
-  .hero-text-content {
+  .home-text-content {
     width: 100% !important;
   }
   
-  .hero-section {
+  .home-section {
     display: block !important;
   }
   
-  .hero-carousel {
+  .home-carousel {
     display: none !important;
   }
 }
 
 /* Tablet: 55/45 split to give carousel more room */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .hero-text-content {
+  .home-text-content {
     width: 55%;
   }
   
-  .hero-carousel {
+  .home-carousel {
     width: 45%;
   }
 }
 
 /* Small desktop: 60/40 split */
 @media (min-width: 1024px) {
-  .hero-text-content {
+  .home-text-content {
     width: 60%;
   }
   
-  .hero-carousel {
+  .home-carousel {
     width: 40%;
   }
 }

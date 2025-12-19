@@ -1,6 +1,6 @@
 import React from 'react'
-import ItemGrid from '@/components/ItemGrid'
-import Footer from '@/components/Footer'
+import ItemGrid from '@/components/ui/ItemGrid'
+import Footer from '@/components/ui/Footer'
 import { PROJECTS_CONTENT } from '@/content/projects'
 
 export default function ProjectsPage() {

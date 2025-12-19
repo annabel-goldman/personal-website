@@ -1,12 +1,12 @@
 import React from 'react'
-import Hero from '@/components/Hero'
-import Footer from '@/components/Footer'
+import Home from '@/components/Home'
+import Footer from '@/components/ui/Footer'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen">
       <section id="home">
-        <Hero />
+        <Home />
       </section>
       <div className="w-full h-px bg-cream-50" />
       <Footer />

@@ -1,6 +1,6 @@
 import React from 'react'
 import Resume from '@/components/Resume'
-import Footer from '@/components/Footer'
+import Footer from '@/components/ui/Footer'
 
 export default function ResumePage() {
   return (
