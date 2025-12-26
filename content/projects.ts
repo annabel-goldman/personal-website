@@ -94,7 +94,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 4,
       title: 'MistakenTales',
-      description: 'MistakenTales is an LLC I founded to design alternate reality games.',
+      description: 'MistakenTales Inc. is an Game Studio I founded to design alternate reality games.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
       image: '/projects/mistaken-tales.jpg',
       link: 'https://mistakentales.com/',
