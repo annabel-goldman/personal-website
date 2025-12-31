@@ -11,7 +11,7 @@ export const HOME_CONTENT = {
   TITLE: 'Masters Student in Computer Science, Northwestern University',
   
   // Main description paragraph in hero section
-  DESCRIPTION: 'My research interests span computer science education, human-computer interaction, artificial intelligence, and web development. I made this website myself!',
+  DESCRIPTION: 'I’m a full-stack software engineer interested in building human-centered AI systems. I’m particularly motivated by problems where interfaces shape how people think, learn, and make decisions. I often work closely with researchers, educators, and non-technical stakeholders to translate messy real-world needs into usable systems.',
 
   // Hero section button labels
   BUTTONS: {

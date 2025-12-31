@@ -66,15 +66,6 @@ export const PROJECTS_CONTENT = {
   PROJECTS: [
     {
       id: 1,
-      title: 'Family Cookbook',
-      description: 'A digital cookbook of family recipes I collected, formatted, and put on a website to share with my family.',
-      technologies: [TECHNOLOGIES.HTML, TECHNOLOGIES.CSS, TECHNOLOGIES.JAVASCRIPT],
-      image: '/projects/family-cookbook.jpg',
-      link: 'http://goldmanfamilycookbook.com/',
-      github: ''
-    },
-    {
-      id: 2,
       title: 'My Virtual Aquarium',
       description: 'Very simple website where you can own and add fish to your virtual aquarium.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.TYPESCRIPT],
@@ -83,33 +74,56 @@ export const PROJECTS_CONTENT = {
       github: 'https://github.com/annabel-goldman/aquarium'
     },
     {
-      id: 3,
-      title: 'Fairytales 4 Kids',
-      description: 'Simple HTML site with ChatGPT generated stories and DALL·E-generated content.',
+      id: 2,
+      title: 'Ripplet',
+      description: 'Ripplet is an AI-integrated assessment authoring platform. I am a second author on our CHI 2026 paper on design process.',
       technologies: [TECHNOLOGIES.REACT],
-      image: '/projects/fairytales-4-kids.jpg',
-      link: 'https://fairytales4kids.com/',
-      github: 'https://github.com/annabel-goldman/fairytales4kids'
+      image: '/projects/ripplet.jpg',
+      link: 'https://demeter.cs.northwestern.edu/',
+      github: ''
+    },
+    {
+      id: 3,
+      title: 'Family Cookbook',
+      description: 'A digital cookbook of family recipes I collected, formatted, and put on a website to share with my family.',
+      technologies: [TECHNOLOGIES.HTML, TECHNOLOGIES.CSS, TECHNOLOGIES.JAVASCRIPT],
+      image: '/projects/family-cookbook.jpg',
+      link: 'http://goldmanfamilycookbook.com/',
+      github: ''
     },
     {
       id: 4,
+      title: 'AMG Arcade',
+      description: 'Very simple html, javascript, and css only arcade app I made! Play your favorite retro arcade games.',
+      technologies: [TECHNOLOGIES.JAVASCRIPT, TECHNOLOGIES.HTML, TECHNOLOGIES.CSS],
+      image: '/projects/amg-arcade.jpg',
+      link: 'https://arcade.annabelgoldman.com/',
+      github: 'https://github.com/annabel-goldman/amg-arcade'
+    },
+    {
+      id: 5,
       title: 'MistakenTales',
-      description: 'MistakenTales Inc. is an Game Studio I founded to design alternate reality games.',
+      description: 'MistakenTales Inc. is a game studio I founded to design alternate reality games.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.CSS],
       image: '/projects/mistaken-tales.jpg',
       link: 'https://mistakentales.com/',
       github: 'https://github.com/annabel-goldman/visual-art'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Smart Closet',
       description: 'AI wardrobe tool using OpenAI/Gemini and AWS infrastructure. My Submission for wildhacks 2025.',
       technologies: [TECHNOLOGIES.AWS, TECHNOLOGIES.OPENAI, TECHNOLOGIES.GEMINI],
       image: '/projects/smart-closet.jpg',
       link: 'https://github.com/annabel-goldman/smart-closet-submission',
       github: 'https://github.com/annabel-goldman/smart-closet-submission'
-    },
-    {
+    }
+  ]
+} as const;
+
+/*
+
+{
       id: 6,
       title: 'Chic Shit',
       description: 'My fashion blog. Filled with my opinions on fashion and photos to go along with them.',
@@ -118,10 +132,6 @@ export const PROJECTS_CONTENT = {
       link: 'https://annabel-goldman.github.io/chic-shit-blog/',
       github: 'https://github.com/annabel-goldman/chic-shit-blog'
     }
-  ]
-} as const;
-
-/*
 {
       id: 5,
       title: 'Start Small: Master CS Algorithms',

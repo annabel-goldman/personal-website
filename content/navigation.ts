@@ -5,7 +5,7 @@
 
 export const NAVIGATION = {
   // Brand name shown in nav bar
-  BRAND_NAME: 'Annabel',
+  BRAND_NAME: ' ',
 
   // Main navigation menu items
   ITEMS: [
