@@ -76,7 +76,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 2,
       title: 'Ripplet',
-      description: 'Ripplet is an AI-integrated assessment authoring platform. I am a second author on our CHI 2026 paper on design process.',
+      description: 'Ripplet is an AI-integrated assessment authoring platform. I am the second author on our CHI 2026 paper on design process.',
       technologies: [TECHNOLOGIES.REACT],
       image: '/projects/ripplet.jpg',
       link: 'https://demeter.cs.northwestern.edu/',
