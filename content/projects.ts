@@ -67,7 +67,7 @@ export const PROJECTS_CONTENT = {
     {
       id: 1,
       title: 'My Virtual Aquarium',
-      description: 'Very simple website where you can own and add fish to your virtual aquarium.',
+      description: 'My Aquarium game where you can catch fish, add them to your virtual aquarium, and give them little outfits.',
       technologies: [TECHNOLOGIES.REACT, TECHNOLOGIES.NEXTJS, TECHNOLOGIES.TYPESCRIPT],
       image: '/projects/aquarium.jpg',
       link: 'https://aquarium.annabelgoldman.com/',
