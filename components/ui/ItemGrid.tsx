@@ -71,20 +71,38 @@ export default function ItemGrid({ items, sectionId = 'items', onItemClick }: It
                   </p>
                 </div>
 
-                {/* View Project Button */}
-                {item.link && (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative z-10 mt-4 sm:mt-6 inline-flex items-center gap-2 px-4 py-2 bg-cream-50 text-navy-800 text-sm font-medium hover:bg-white transition-colors duration-200"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {UI_LABELS.VIEW_PROJECT}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                {/* Project Actions */}
+                {(item.link || item.paper) && (
+                  <div className="relative z-10 mt-4 sm:mt-6 flex flex-wrap gap-3">
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-cream-50 text-navy-800 text-sm font-medium hover:bg-white transition-colors duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {UI_LABELS.VIEW_PROJECT}
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                    {item.paper && (
+                      <a
+                        href={item.paper}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-cream-50 text-navy-800 text-sm font-medium hover:bg-white transition-colors duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {UI_LABELS.VIEW_PAPER}
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h10M7 11h10M7 15h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             );
@@ -94,4 +112,3 @@ export default function ItemGrid({ items, sectionId = 'items', onItemClick }: It
     </section>
   )
 }
-

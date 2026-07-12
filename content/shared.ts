@@ -16,6 +16,7 @@ export const SITE_INFO = {
 export const UI_LABELS = {
   // Project/Item buttons
   VIEW_PROJECT: 'View Project',
+  VIEW_PAPER: 'View Paper',
   GITHUB: 'GitHub',
   
   // Project/Item modal headings

@@ -19,7 +19,7 @@ interface ItemDetailModalProps {
  * <ItemDetailModal item={selectedItem} onClose={handleClose} />
  */
 const ItemDetailModal: React.FC<ItemDetailModalProps> = ({ item, onClose }) => {
-  const hasLinks = item.link || item.github;
+  const hasLinks = item.link || item.paper || item.github;
   const hasTechnologies = item.technologies && item.technologies.length > 0;
 
   return (
@@ -80,6 +80,16 @@ const ItemDetailModal: React.FC<ItemDetailModalProps> = ({ item, onClose }) => {
                       className="bg-navy-800 text-white px-4 py-2 text-sm font-medium hover:bg-navy-700 transition-colors duration-200"
                     >
                       {UI_LABELS.VIEW_PROJECT}
+                    </a>
+                  )}
+                  {item.paper && (
+                    <a
+                      href={item.paper}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-navy-800 text-navy-800 px-4 py-2 text-sm font-medium hover:bg-navy-800 hover:text-white transition-colors duration-200"
+                    >
+                      {UI_LABELS.VIEW_PAPER}
                     </a>
                   )}
                   {item.github && (

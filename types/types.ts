@@ -11,6 +11,7 @@ export interface GridItem {
   image?: string;
   technologies?: readonly string[];
   link?: string;
+  paper?: string;
   github?: string;
 }
 

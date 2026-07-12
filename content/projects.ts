@@ -80,6 +80,7 @@ export const PROJECTS_CONTENT = {
       technologies: [TECHNOLOGIES.REACT],
       image: '/projects/ripplet.jpg',
       link: 'https://demeter.cs.northwestern.edu/',
+      paper: 'https://arxiv.org/abs/2602.22186',
       github: ''
     },
     {
